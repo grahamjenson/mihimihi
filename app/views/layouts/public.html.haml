@@ -1,0 +1,20 @@
+!!!
+%html
+  %head
+    %title= "Mihimihi"
+    %meta{name: "description", content: "Mihimihi visualisation by Graham Jenson"}
+    %meta{name: "keywords",content: "Mihimihi visualisation mixandmash hashbang"}
+    = stylesheet_link_tag "application", :media => "all"
+    = csrf_meta_tags
+    //this is here because google stuff inserts above first script element
+    %script
+%body
+  = yield
+
+= render 'shared/google_analytics'
+= google_webfonts_link_tag :unica_one, :lato, :strait
+= javascript_include_tag "application"
+= javascript_include_tag "http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.8/jquery-ui.min.js"
+= javascript_include_tag "jquery.qrcode.min.js"
+= javascript_include_tag "http://w.soundcloud.com/player/api.js"
+= javascript_include_tag "http://connect.soundcloud.com/sdk.js"
