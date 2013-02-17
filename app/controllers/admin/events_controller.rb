@@ -1,4 +1,4 @@
-class EventsController < ApplicationController
+class Admin::EventsController < ApplicationController
   # GET /events
   # GET /events.json
   def index
@@ -35,16 +35,21 @@ class EventsController < ApplicationController
   # GET /events/1/edit
   def edit
     @event = Event.find(params[:id])
+    @event.lonlat = @event.lonlat.to_json
   end
 
   # POST /events
   # POST /events.json
   def create
+    if params[:event][:lonlat]
+      params[:event][:lonlat] = JSON.parse(params[:event][:lonlat])
+    end
+
     @event = Event.new(params[:event])
 
     respond_to do |format|
       if @event.save
-        format.html { redirect_to @event, notice: 'Event was successfully created.' }
+        format.html { redirect_to admin_event_path(@event), notice: 'Event was successfully created.' }
         format.json { render json: @event, status: :created, location: @event }
       else
         format.html { render action: "new" }
@@ -56,11 +61,14 @@ class EventsController < ApplicationController
   # PUT /events/1
   # PUT /events/1.json
   def update
+    if params[:event][:lonlat]
+      params[:event][:lonlat] = JSON.parse(params[:event][:lonlat])
+    end
     @event = Event.find(params[:id])
 
     respond_to do |format|
       if @event.update_attributes(params[:event])
-        format.html { redirect_to @event, notice: 'Event was successfully updated.' }
+        format.html { redirect_to admin_event_path(@event), notice: 'Event was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }
@@ -76,7 +84,7 @@ class EventsController < ApplicationController
     @event.destroy
 
     respond_to do |format|
-      format.html { redirect_to events_url }
+      format.html { redirect_to admin_events_url }
       format.json { head :no_content }
     end
   end

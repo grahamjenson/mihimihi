@@ -1,0 +1,17 @@
+.static.event{style: 'top: #{@y}px'}
+  .small
+    .title  
+      = @the_event.get('title')
+  .large
+    .title  
+      = @the_event.get('title')
+    .dates
+      .from
+        = "#{@the_event.get('years_ago')} years ago"
+      - if @the_event.get('over_time')
+        .til
+          = @the_event.get('over_time')
+    .content
+      = @the_event.get('content')
+
+    - console.log(@the_event)

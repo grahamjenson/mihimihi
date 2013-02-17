@@ -1,0 +1,3 @@
+.static.timetext{style: 'top: #{@y}px'}
+  #{@t.addCommas()} 
+  %span.yo ="years ago"
