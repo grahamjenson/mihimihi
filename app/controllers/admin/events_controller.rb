@@ -25,7 +25,7 @@ class Admin::EventsController < ApplicationController
   # GET /events/new.json
   def new
     @event = Event.new
-
+    @event.lonlat = '{type: "LineString", "coordinates": [[x1, y1], [x2, y2]]}'
     respond_to do |format|
       format.html # new.html.erb
       format.json { render json: @event }
@@ -35,16 +35,11 @@ class Admin::EventsController < ApplicationController
   # GET /events/1/edit
   def edit
     @event = Event.find(params[:id])
-    @event.lonlat = @event.lonlat.to_json
   end
 
   # POST /events
   # POST /events.json
   def create
-    if params[:event][:lonlat]
-      params[:event][:lonlat] = JSON.parse(params[:event][:lonlat])
-    end
-
     @event = Event.new(params[:event])
 
     respond_to do |format|
@@ -61,9 +56,6 @@ class Admin::EventsController < ApplicationController
   # PUT /events/1
   # PUT /events/1.json
   def update
-    if params[:event][:lonlat]
-      params[:event][:lonlat] = JSON.parse(params[:event][:lonlat])
-    end
     @event = Event.find(params[:id])
 
     respond_to do |format|

@@ -1,3 +1,12 @@
+@import "compass"
+@import "compass/css3"
+@import "compass/utilities/lists"
+
+$MAJOR_TICK_WIDTH: 50px
+$TIMELINE_WIDTH: 10px
+$TIMELINE_COLOR: #0b479d
+$TIMELINE_X : 250px
+
 html, body
   height: 100%
   font-family: 'Lato'
@@ -20,9 +29,57 @@ html, body
       height 40px
 
 //Time line
-.timetext
+
+.timeline
   opacity: .5
-  font-size: 4em
-  .yo
-    font-size: .5em
-    margin-left: -10px
+  .majortick
+    z-index: 10
+    .timetext
+      width: $TIMELINE_X
+      font-size: 4em
+      text-align: right
+      .yo
+        font-size: .5em
+        text-align: right
+        margin-top: 15px
+
+    .tick
+      position: absolute
+      top: -10px
+      @include border-radius($MAJOR_TICK_WIDTH/2)
+      width: $MAJOR_TICK_WIDTH
+      height: $MAJOR_TICK_WIDTH
+      left: $TIMELINE_X
+      background: $TIMELINE_COLOR
+    
+    .inner-tick
+      position: absolute
+      top: -2px
+      @include border-radius($MAJOR_TICK_WIDTH/2)
+      width: $MAJOR_TICK_WIDTH - 16px
+      height: $MAJOR_TICK_WIDTH - 16px
+      left: $TIMELINE_X + 8px
+      background: white
+
+  .actual-line
+    z-index: 5
+    position: absolute
+    width: $TIMELINE_WIDTH
+    background: $TIMELINE_COLOR
+    left: 250px+($MAJOR_TICK_WIDTH/2) -($TIMELINE_WIDTH/2)
+
+// EVENTs
+.event
+  position: absolute
+  left: $TIMELINE_X + 50px
+
+
+//MAP
+
+.land
+  fill: #d7c7ad
+  stroke: #766951
+
+.boundary 
+  fill: none
+  stroke: #a5967e

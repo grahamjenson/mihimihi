@@ -58,9 +58,9 @@ CREATE TABLE events (
     event_type character varying(255),
     created_at timestamp without time zone NOT NULL,
     updated_at timestamp without time zone NOT NULL,
-    lonlat hstore,
     years_ago integer,
-    over_time integer
+    over_time integer,
+    lonlat text
 );
 
 
@@ -125,3 +125,5 @@ INSERT INTO schema_migrations (version) VALUES ('20130214213707');
 INSERT INTO schema_migrations (version) VALUES ('20130214214246');
 
 INSERT INTO schema_migrations (version) VALUES ('20130215030017');
+
+INSERT INTO schema_migrations (version) VALUES ('20130218092255');

@@ -1,3 +1,12 @@
-.static.timetext{style: 'top: #{@y}px'}
-  #{@t.addCommas()} 
-  %span.yo ="years ago"
+.majortick.static{style: 'top: #{@y}px'}
+  .timetext
+    -if @t > 1
+      #{@t.addCommas()} 
+      .yo ="years ago"
+    - else if @t == 1
+      1 
+      .yo ="year ago"
+    - else
+      Now
+  .tick
+  .inner-tick

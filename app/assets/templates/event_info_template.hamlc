@@ -1,10 +1,10 @@
 .static.event{style: 'top: #{@y}px'}
   .small
+    .icon
+      %img{src: @the_event.get()}
     .title  
       = @the_event.get('title')
   .large
-    .title  
-      = @the_event.get('title')
     .dates
       .from
         = "#{@the_event.get('years_ago')} years ago"
@@ -13,5 +13,5 @@
           = @the_event.get('over_time')
     .content
       = @the_event.get('content')
-
-    - console.log(@the_event)
+    .map
+      .js-map{"data-id": @the_event.id}
