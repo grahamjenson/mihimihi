@@ -3,7 +3,7 @@
 - else
   - url = admin_events_path
 
-= form_for @event, :url => url do |f|
+= form_for @event, :url => url, :html => {:multipart => true}do |f|
   - if @event.errors.any?
     #error_explanation
       %h2= "#{pluralize(@event.errors.count, "error")} prohibited this event from being saved:"
@@ -26,10 +26,9 @@
   .field
     = f.label :lonlat
     = f.text_area :lonlat
-  
   .field
-    = f.label :large_icon_url
-    = f.text_field :large_icon_url
+    = f.label :image
+    = f.file_field :image
 
   .actions
     = f.submit 'Save'

@@ -2,7 +2,7 @@
   .small
     .eye
       %img{src: '/assets/icon_eye.png', height: '100px'}
-    - url = "/assets/#{@the_event.get('large_icon_url')}"
+    - url = "#{@the_event.get('image').icon.url}"
     .icon{style: "background: url(#{url}) no-repeat;"}
     .title
       = @the_event.get('title')

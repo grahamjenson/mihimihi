@@ -3,15 +3,15 @@
 %table
   %tr
     %th Title
-    %th Content
+    %th time
     %th
     %th
     %th
 
-  - @events.each do |event|
+  - @events.sort_by{|x| x.years_ago}.each do |event|
     %tr
       %td= event.title
-      %td= event.content
+      %td= event.years_ago
       %td= link_to 'Show', admin_event_path(event)
       %td= link_to 'Edit', edit_admin_event_path(event)
       %td= link_to 'Destroy', admin_event_path(event), method: :delete, data: { confirm: 'Are you sure?' }

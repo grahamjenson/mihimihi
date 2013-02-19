@@ -54,12 +54,12 @@ class Mihimihi.Views.EventMapView extends Backbone.View
     [x2,y2] = bbox[1]
     [xc,yc] = d3.geo.centroid(lonlat)
     distToCenterOfBbox = @calcDist([x2, y2],[xc,yc])
-    console.log "BBOX #{@the_event.get('title')}", [x2, y2] , [xc,yc], 
+    
 
 
     minScale = 79
     maxScale = 300    
-    scaleCalc = d3.scale.linear().range([maxScale,minScale]).domain([0,19000]).clamp(true)
+    scaleCalc = d3.scale.linear().range([maxScale,minScale]).domain([0,5000]).clamp(true)
 
 
     #setup
@@ -67,13 +67,15 @@ class Mihimihi.Views.EventMapView extends Backbone.View
     #move center to 0,0
     #rotate map to center on coordinates
     s = scaleCalc(distToCenterOfBbox)
+    console.log "BBOX #{@the_event.get('title')}", distToCenterOfBbox, s
     projection = d3.geo.equirectangular()
     .scale(s)
     .translate([width/2,height/2])
     if s != 79
       #this scale shows the whole world, do not rotate
       projection.rotate(ll_center)
-
+    else
+      projection.rotate([-180,0])
     @path = d3.geo.path().projection(projection);
 
     #bounds takes feature

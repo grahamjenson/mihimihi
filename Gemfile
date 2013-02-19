@@ -22,6 +22,10 @@ gem "compass-rails", "~> 1.0.1"
 
 gem 'activerecord-postgres-hstore'
 
+gem "rmagick"
+gem "carrierwave"
+gem "fog"
+
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
