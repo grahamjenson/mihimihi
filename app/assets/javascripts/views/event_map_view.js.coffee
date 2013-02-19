@@ -22,10 +22,26 @@ class Mihimihi.Views.EventMapView extends Backbone.View
 
     @render() 
 
+  calcDist: (p1,p2) ->
+    #Haversine formula
+    dLatRad = Math.abs(p1[1] - p2[1]) * Math.PI/180;
+    dLonRad = Math.abs(p1[0] - p2[0]) * Math.PI/180;
+    # Calculate origin in Radians
+    lat1Rad = p1[1] * Math.PI/180;
+    lon1Rad = p1[0] * Math.PI/180;
+    # Calculate new point in Radians
+    lat2Rad = p2[1] * Math.PI/180;
+    lon2Rad = p2[0] * Math.PI/180;
 
+    # Earth's Radius
+    eR = 6371;
+    d1 = Math.sin(dLatRad/2) * Math.sin(dLatRad/2) +
+       Math.sin(dLonRad/2) * Math.sin(dLonRad/2) * Math.cos(lat1Rad) * Math.cos(lat2Rad);
+    d2 = 2 * Math.atan2(Math.sqrt(d1), Math.sqrt(1-d1));
+    return(eR * d2);
 
   render: () ->
-    width = 400
+    width = 500
     height = 250
 
     lonlat = JSON.parse(@the_event.get('lonlat'))
@@ -33,14 +49,30 @@ class Mihimihi.Views.EventMapView extends Backbone.View
     [x,y] = d3.geo.centroid(lonlat)
     ll_center = [-x,-y]
 
+    bbox = d3.geo.bounds(lonlat)
+    [x1,y1] = bbox[0]
+    [x2,y2] = bbox[1]
+    [xc,yc] = d3.geo.centroid(lonlat)
+    distToCenterOfBbox = @calcDist([x2, y2],[xc,yc])
+    console.log "BBOX #{@the_event.get('title')}", [x2, y2] , [xc,yc], 
+
+
+    minScale = 79
+    maxScale = 300    
+    scaleCalc = d3.scale.linear().range([maxScale,minScale]).domain([0,19000]).clamp(true)
+
+
     #setup
     #scale to right size
     #move center to 0,0
     #rotate map to center on coordinates
+    s = scaleCalc(distToCenterOfBbox)
     projection = d3.geo.equirectangular()
-    .scale(250)
+    .scale(s)
     .translate([width/2,height/2])
-    .rotate(ll_center)
+    if s != 79
+      #this scale shows the whole world, do not rotate
+      projection.rotate(ll_center)
 
     @path = d3.geo.path().projection(projection);
 

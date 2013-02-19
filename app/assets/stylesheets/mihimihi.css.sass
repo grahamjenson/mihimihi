@@ -73,7 +73,7 @@ html, body
     left: 250px+($MAJOR_TICK_WIDTH/2) -($TIMELINE_WIDTH/2)
 
 // EVENTs
-$EVENT_WIDTH : 800px
+$EVENT_WIDTH : 900px
 .event
   position: absolute
   left: $TIMELINE_X + 50px
@@ -125,7 +125,7 @@ $EVENT_WIDTH : 800px
         height: 200px
     .map
       $MAP_HEIGHT: 250px
-      $MAP_WEIGHT: 400px
+      $MAP_WEIGHT: 500px
 
       position: relative
       margin: 5px
@@ -134,7 +134,7 @@ $EVENT_WIDTH : 800px
       .around
         $AROUND_BORDER : 10px
         position: absolute
-        @include border-radius(10px)
+        @include border-radius(15px)
         height: $MAP_HEIGHT
         width: $MAP_WEIGHT
         z-index: 20
@@ -162,7 +162,7 @@ $EVENT_WIDTH : 800px
         $STROKE_WIDTH: 5
         .arrow
           opacity: $ARROW_OPACITY
-          fill: $ARROW_COLOR
+          fill: none
           stroke: $ARROW_COLOR
           stroke-width: $STROKE_WIDTH
 
