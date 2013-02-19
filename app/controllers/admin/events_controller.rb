@@ -1,6 +1,6 @@
 class Admin::EventsController < ApplicationController
   before_filter :authenticate_user!
-  
+
   # GET /events
   # GET /events.json
   def index
@@ -31,7 +31,7 @@ class Admin::EventsController < ApplicationController
     respond_to do |format|
       format.html # new.html.erb
       format.json { render json: @event }
-    end
+    end 
   end
 
   # GET /events/1/edit
