@@ -1,6 +1,7 @@
 @import "compass"
 @import "compass/css3"
 @import "compass/utilities/lists"
+@import "compass/css3/box-shadow"
 
 $MAJOR_TICK_WIDTH: 50px
 $TIMELINE_WIDTH: 10px
@@ -10,6 +11,9 @@ $TIMELINE_X : 250px
 html, body
   height: 100%
   font-family: 'Lato'
+
+
+
 
 .static
   position: absolute
@@ -69,17 +73,105 @@ html, body
     left: 250px+($MAJOR_TICK_WIDTH/2) -($TIMELINE_WIDTH/2)
 
 // EVENTs
+$EVENT_WIDTH : 800px
 .event
   position: absolute
   left: $TIMELINE_X + 50px
 
+  /* background: url('/assets/weave.jpg') */
+  .small
+    height: 100px
+    width: $EVENT_WIDTH
+    .eye
+      display: inline
+      position: absolute
+      z-index: 20
+    .icon
+      display: inline-block
+      @include border-radius(50px)
+      position: relative
+      left: 14px
+      top: 0px
+      z-index: 10
+      background-size: 100%
+      background-position: center
+      width: 100px
+      height: 100px
+    .title
+      margin-left: 15px
+      margin-top: 23px
+      display: inline-block
+      vertical-align: top
+      font-size: 2em
+      .dates
+        margin-top: 2px
+        vertical-align: top
+        font-size: 0.5em
 
-//MAP
+  .large
+    width: $EVENT_WIDTH
+    left: 30px
+    .content
+      display: inline-block
+      vertical-align: top
+      float: right
+      width: $EVENT_WIDTH
 
-.land
-  fill: #d7c7ad
-  stroke: #766951
+      img
+        float: left
+        margin-right: 5px
+        margin-bottom: 2px
+    .map
+      $MAP_HEIGHT: 250px
+      $MAP_WEIGHT: 400px
 
-.boundary 
-  fill: none
-  stroke: #a5967e
+      position: relative
+      margin: 5px
+      display: block
+      float: right
+      .around
+        $AROUND_BORDER : 10px
+        position: absolute
+        @include border-radius(10px)
+        height: $MAP_HEIGHT
+        width: $MAP_WEIGHT
+        z-index: 20
+        left: -$AROUND_BORDER/2
+        top: -$AROUND_BORDER/2
+        border-style: solid
+        border-width: 5px
+        border-color: white
+
+      svg 
+        z-index: 10
+        .land
+          fill: #d7c7ad
+          stroke: #766951
+
+        .boundary 
+          fill: none
+          stroke: #a5967e
+
+        .background
+          fill: #a4bac7
+
+        $ARROW_COLOR: red
+        $ARROW_OPACITY: .5
+        $STROKE_WIDTH: 5
+        .arrow
+          opacity: $ARROW_OPACITY
+          fill: $ARROW_COLOR
+          stroke: $ARROW_COLOR
+          stroke-width: $STROKE_WIDTH
+
+        #arrow
+          opacity: $ARROW_OPACITY
+          fill: $ARROW_COLOR
+          stroke: $ARROW_COLOR
+          stroke-width: $STROKE_WIDTH
+
+        #dot
+          opacity: $ARROW_OPACITY
+          fill: $ARROW_COLOR
+          stroke: $ARROW_COLOR
+          stroke-width: $STROKE_WIDTH

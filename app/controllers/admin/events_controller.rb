@@ -25,7 +25,7 @@ class Admin::EventsController < ApplicationController
   # GET /events/new.json
   def new
     @event = Event.new
-    @event.lonlat = '{type: "LineString", "coordinates": [[x1, y1], [x2, y2]]}'
+    @event.lonlat = '{"type": "LineString", "coordinates": [[x1, y1], [x2, y2]]}'
     respond_to do |format|
       format.html # new.html.erb
       format.json { render json: @event }

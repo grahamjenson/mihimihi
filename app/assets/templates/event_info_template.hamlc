@@ -1,17 +1,20 @@
-.static.event{style: 'top: #{@y}px'}
+.static.event{style: 'top: #{@y-37}px'}
   .small
-    .icon
-      %img{src: @the_event.get()}
-    .title  
+    .eye
+      %img{src: '/assets/icon_eye.png', height: '100px'}
+    - url = "/assets/#{@the_event.get('large_icon_url')}"
+    .icon{style: "background: url(#{url}) no-repeat;"}
+    .title
       = @the_event.get('title')
+      .dates
+        %em
+          = "#{@the_event.get('years_ago').addCommas()}"
+          - if @the_event.get('over_time')
+            = "til #{@the_event.get('over_time').addCommas()}"
+          = "years ago"
   .large
-    .dates
-      .from
-        = "#{@the_event.get('years_ago')} years ago"
-      - if @the_event.get('over_time')
-        .til
-          = @the_event.get('over_time')
+    %hr
     .content
-      = @the_event.get('content')
-    .map
-      .js-map{"data-id": @the_event.id}
+
+      .js-map.map{"data-id": @the_event.id, 'align': 'right'}
+        .around

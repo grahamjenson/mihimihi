@@ -33,10 +33,9 @@ class Mihimihi.Views.MihimihiView extends Backbone.View
     @selectEvent()
 
   selectEvent: -> 
-    ycenter = $(window).scrollTop() + $(window).height() / 2
-    trange = [@time.invert(ycenter+150),@time.invert(ycenter-250)]
+    ycenter = $(window).scrollTop() + 100
+    trange = [@time.invert(ycenter),@time.invert(ycenter-250)]
     events = @timelineEvents.getEventsFromDate(trange)
-    console.log((e.get('title') for e in events))
     for e in @timelineEvents.models
       if e in events
         console.log(e.get('title'))
