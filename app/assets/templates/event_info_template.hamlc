@@ -10,7 +10,7 @@
         %em
           = "#{@the_event.get('years_ago').addCommas()}"
           - if @the_event.get('over_time')
-            = "til #{@the_event.get('over_time').addCommas()}"
+            = "- #{@the_event.get('over_time').addCommas()}"
           = "years ago"
   .large
     %hr
