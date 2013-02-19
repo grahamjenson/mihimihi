@@ -1,6 +1,6 @@
 class Mihimihi.Collections.Events extends Backbone.Collection
   
-  url: "admin/events"
+  url: "events"
 
   model: Mihimihi.Models.Event
 
