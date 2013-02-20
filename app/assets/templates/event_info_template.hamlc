@@ -2,7 +2,7 @@
   .small
     .grabber
       .eye
-        %img{src: '/assets/icon_eye.png', height: '100px'}
+        //%img{src: '/assets/icon_eye.png', height: '100px'}
       - url = "#{@the_event.get('image').icon.url}"
       .icon{style: "background: url(#{url}) no-repeat;"}
 

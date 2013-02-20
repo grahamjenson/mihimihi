@@ -111,11 +111,12 @@ $EVENT_WIDTH : 900px
 $EVENT_LEFT: $TIMELINE_X + 56px
 .event.active
   z-index: 1000
+  @include box-shadow(rgba(black, 0.4) 5px 5px 60px, rgba(black, 0.5) 0 0 100px inset)
 .event
   @include background-image(image-url("/assets/opaper.jpg"))
-  @include box-shadow(rgba(black, 0.4) 5px 5px 25px, rgba(black, 0.5) 0 0 100px inset)
-
-  @include border-top-left-radius(56px)
+  @include box-shadow(rgba(black, 0.4) 5px 5px 40px, rgba(black, 0.5) 0 0 100px inset)
+  z-index: 900
+  @include border-top-radius(56px)
   position: absolute
   left: $EVENT_LEFT
 
@@ -166,8 +167,8 @@ $EVENT_LEFT: $TIMELINE_X + 56px
       display: inline-block
       vertical-align: top
       float: right
-      width: $EVENT_WIDTH
-
+      width: $EVENT_WIDTH - 20px
+      margin-right: 10px
       img
         float: left
         margin-right: 5px
@@ -184,7 +185,7 @@ $EVENT_LEFT: $TIMELINE_X + 56px
       float: right
 
       svg
-        @include box-shadow(rgba(black, 0.4) 5px 5px 25px, rgba(black, 0.4) 0 0 100px inset)
+        @include box-shadow(rgba(black, 0.4) 5px 5px 25px)
         z-index: 10
         .land
           fill: #d7c7ad
@@ -196,7 +197,7 @@ $EVENT_LEFT: $TIMELINE_X + 56px
         .background
           fill: #a4bac7
           opactiy: 0
-          
+
         $ARROW_COLOR: red
         $ARROW_OPACITY: .5
         $STROKE_WIDTH: 5
