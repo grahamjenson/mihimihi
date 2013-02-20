@@ -1,4 +1,12 @@
-#js-top
+.weave
+  .top
+  .under
+.headers
+  %h1
+    Mihimihi
+  %h2.h2
+    Where you are from is more important than your name
+
 #js-background
 #js-timeline
 #js-events-info

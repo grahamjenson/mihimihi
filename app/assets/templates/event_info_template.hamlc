@@ -1,9 +1,11 @@
 .static.event{style: 'top: #{@y-37}px'}
   .small
-    .eye
-      %img{src: '/assets/icon_eye.png', height: '100px'}
-    - url = "#{@the_event.get('image').icon.url}"
-    .icon{style: "background: url(#{url}) no-repeat;"}
+    .grabber
+      .eye
+        %img{src: '/assets/icon_eye.png', height: '100px'}
+      - url = "#{@the_event.get('image').icon.url}"
+      .icon{style: "background: url(#{url}) no-repeat;"}
+
     .title
       = @the_event.get('title')
       .dates
@@ -12,8 +14,11 @@
           - if @the_event.get('over_time')
             = "- #{@the_event.get('over_time').addCommas()}"
           = "years ago"
+    .bot-bit
+      .hr
+      .hr-end
   .large
-    %hr
+    
     .content
 
       .js-map.map{"data-id": @the_event.id, 'align': 'right'}
