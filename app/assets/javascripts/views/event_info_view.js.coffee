@@ -25,6 +25,8 @@ class Mihimihi.Views.EventInfoView extends Backbone.View
 
   expand: () ->
     @$('.large').slideDown(@dropTime);
+    @$('.event').addClass('active')
 
   collapse: () ->
     @$('.large').slideUp(@dropTime);
+    @$('.event').removeClass('active')

@@ -65,6 +65,7 @@ body
     color: white
 
 .timeline
+
   opacity: .5
   .majortick
     z-index: 10
@@ -98,6 +99,7 @@ body
       background: white
 
   .actual-line
+    @include box-shadow(rgba(black, 1) 5px 5px 25px)
     z-index: 5
     position: absolute
     width: $TIMELINE_WIDTH
@@ -107,15 +109,18 @@ body
 // EVENTs
 $EVENT_WIDTH : 900px
 $EVENT_LEFT: $TIMELINE_X + 56px
+.event.active
+  z-index: 1000
 .event
-  background: rgba($TIMELINE_COLOR,.2)
+  @include background-image(image-url("/assets/opaper.jpg"))
+  @include box-shadow(rgba(black, 0.4) 5px 5px 25px, rgba(black, 0.5) 0 0 100px inset)
+
   @include border-top-left-radius(56px)
   position: absolute
   left: $EVENT_LEFT
 
   /* background: url('/assets/weave.jpg') */
   .small
-    background: rgba($TIMELINE_COLOR,.2)
     @include border-top-left-radius(56px)
     height: 100px
     width: $EVENT_WIDTH
@@ -177,32 +182,21 @@ $EVENT_LEFT: $TIMELINE_X + 56px
       margin: 5px
       display: block
       float: right
-      .around
-        $AROUND_BORDER : 10px
-        position: absolute
-        @include border-radius(15px)
-        height: $MAP_HEIGHT
-        width: $MAP_WEIGHT
-        z-index: 20
-        left: -$AROUND_BORDER/2
-        top: -$AROUND_BORDER/2
-        border-style: solid
-        border-width: 5px
-        border-color: white
 
-      svg 
+      svg
+        @include box-shadow(rgba(black, 0.4) 5px 5px 25px, rgba(black, 0.4) 0 0 100px inset)
         z-index: 10
         .land
           fill: #d7c7ad
           stroke: #766951
-
         .boundary 
           fill: none
           stroke: #a5967e
 
         .background
           fill: #a4bac7
-
+          opactiy: 0
+          
         $ARROW_COLOR: red
         $ARROW_OPACITY: .5
         $STROKE_WIDTH: 5

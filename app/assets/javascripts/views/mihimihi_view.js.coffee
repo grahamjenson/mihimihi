@@ -24,20 +24,25 @@ class Mihimihi.Views.MihimihiView extends Backbone.View
 
     timeline = new Mihimihi.Views.TimelineView({el: '#js-timeline', model: @timelineEvents, attributes: {time: @time}})
 
+    bgv = new Mihimihi.Views.BackgroundView()
+
     #backgroundmap = new Mihimihi.Views.BackgroundMapView({el: '#js-background', model: @timelineEvents, attributes: {time: @time}})
 
     for e in (x for x in @timelineEvents.models when x.get('years_ago') )
       @$('#js-events-info').append("<div class='js-event-info' data-id='#{e.id}''></div>")
       eventinfo = new Mihimihi.Views.EventInfoView({el: @$(".js-event-info[data-id=#{e.id}]"), model: e, attributes: {time: @time}})
 
+
     @updateScroll()
 
   updateScroll: -> 
     #select events
-    es = @timelineEvents.closestBelowDate(@time.invert( $(window).scrollTop() - 50))
+    ycenter = $(window).scrollTop() + 100
+    trange = [@time.invert(ycenter),@time.invert(ycenter-250)]
 
+    be = _.sortBy(@timelineEvents.getEventsFromDate(trange), (e) -> e.get('years_ago'))[0]
     for e in @timelineEvents.models
-      if e == es
+      if e == be
         console.log(e.get('title'))
         e.set('selected',true)
       else
