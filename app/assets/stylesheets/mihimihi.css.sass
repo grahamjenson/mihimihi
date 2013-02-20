@@ -103,29 +103,29 @@ html, body
 
 // EVENTs
 $EVENT_WIDTH : 900px
-$EVENT_LEFT: $TIMELINE_X + 50px
+$EVENT_LEFT: $TIMELINE_X + 56px
 .event
-  background: url(/assets/woven.png)
+  background: rgba($TIMELINE_COLOR,.2)
   @include border-top-left-radius(56px)
   position: absolute
   left: $EVENT_LEFT
 
   /* background: url('/assets/weave.jpg') */
   .small
-    background: url(/assets/woven.png)
+    background: rgba($TIMELINE_COLOR,.2)
     @include border-top-left-radius(56px)
     height: 100px
     width: $EVENT_WIDTH
     .grabber
       display: inline
       position: relative
-      left: -8px
+      left: -12px
       top: 3px
       .eye
         display: inline
         position: absolute
         z-index: 200
-        left: -17px
+        left: -15px
       .icon
         display: inline-block
         @include border-radius(50px)
