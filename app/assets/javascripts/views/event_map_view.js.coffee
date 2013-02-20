@@ -111,7 +111,8 @@ class Mihimihi.Views.EventMapView extends Backbone.View
       @addArrows(lonlats,g)
     else if lonlat.type == "Point"
       @addPoints([lonlat],g)
-    
+    else if lonlat.type == "MultiPoint"
+      @addPoints(({type: "Point", coordinates: x} for x in lonlat.coordinates),g)
 
   addPoints: (points, g) ->
     @points = g.selectAll("path")
