@@ -33,14 +33,11 @@ class Mihimihi.Views.MihimihiView extends Backbone.View
     @updateScroll()
 
   updateScroll: -> 
-    
-    
     #select events
-    ycenter = $(window).scrollTop() + 100
-    trange = [@time.invert(ycenter),@time.invert(ycenter-250)]
-    events = @timelineEvents.getEventsFromDate(trange)
+    es = @timelineEvents.closestBelowDate(@time.invert( $(window).scrollTop() - 50))
+
     for e in @timelineEvents.models
-      if e in events
+      if e == es
         console.log(e.get('title'))
         e.set('selected',true)
       else
