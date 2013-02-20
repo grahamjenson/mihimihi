@@ -275,8 +275,8 @@ DEPENDENCIES
   capybara
   carrierwave
   coffee-rails (~> 3.2.1)
-  compass (~> 0.12.rc.0)
-  compass-rails (~> 1.0.1)
+  compass
+  compass-rails
   debugger
   devise
   execjs
@@ -296,6 +296,6 @@ DEPENDENCIES
   rails (= 3.2.8)
   rmagick
   rspec-rails
-  sass-rails (~> 3.2.3)
+  sass-rails
   thin
   uglifier (>= 1.0.3)

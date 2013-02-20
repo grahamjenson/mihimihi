@@ -16,9 +16,9 @@ gem 'bootstrap-sass', '~> 2.1.0.0'
 gem 'backbone-on-rails'
 gem 'haml_coffee_assets'
 
-gem 'sass-rails',   '~> 3.2.3'
-gem "compass", "~> 0.12.rc.0"
-gem "compass-rails", "~> 1.0.1"
+gem 'sass-rails'
+gem "compass"
+gem "compass-rails"
 
 gem 'activerecord-postgres-hstore'
 
@@ -30,7 +30,7 @@ gem "devise"
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
-
+  
   gem 'coffee-rails', '~> 3.2.1'
   gem 'uglifier', '>= 1.0.3'
   gem 'execjs'
