@@ -17,7 +17,7 @@ class Mihimihi.Views.OverallMapView extends Mihimihi.Views.MapView
       for f in @allFeatures
         if not (f in done)
           done.push(f)
-          @animateFeatures(f, () => console.log("ASDASDASDASD"); @clearFeatures(f))
+          @animateFeatures(f)
           d = false
           break
       if d 
