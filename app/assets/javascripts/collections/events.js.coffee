@@ -4,6 +4,30 @@ class Mihimihi.Collections.Events extends Backbone.Collection
 
   model: Mihimihi.Models.Event
 
+  initialize: (models) ->
+    console.log "ASDASDSAD", models + ""
+    (console.log(m) for m in @models)
+
+  parse: (resp) ->
+    ret = []
+    for e in resp
+      #test if lonlat can be parset
+      success = false
+      try
+        e.lonlat = JSON.parse(e.lonlat);
+        success = true
+      catch error
+        console.log "ERROR", e
+
+      if not e.years_ago
+        console.log "NO YEAR for",e
+      else if (not e.lonlat) or (not success)
+        console.log "ERROR", e
+      else
+        ret.push(e)
+
+    return ret
+
   getEventsFromDate: (trange) ->
     (m for m in @models when m.get('years_ago') > trange[0] and m.get('years_ago') < trange[1])
 

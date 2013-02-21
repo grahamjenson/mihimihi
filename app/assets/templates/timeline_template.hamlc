@@ -1,1 +1,1 @@
-#js-vertical-timeline.timeline
+#js-vertical-timeline.timeline{style: "height: #{@height}px;"}

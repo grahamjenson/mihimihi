@@ -26,12 +26,12 @@ class Mihimihi.Views.MihimihiView extends Backbone.View
 
     bgv = new Mihimihi.Views.BackgroundView()
 
-    #backgroundmap = new Mihimihi.Views.BackgroundMapView({el: '#js-background', model: @timelineEvents, attributes: {time: @time}})
+    overallmap = new Mihimihi.Views.OverallMapView({el: '#js-overallmap', model: @timelineEvents})
 
-    for e in (x for x in @timelineEvents.models when x.get('years_ago') )
+
+    for e in @timelineEvents.models
       @$('#js-events-info').append("<div class='js-event-info' data-id='#{e.id}''></div>")
       eventinfo = new Mihimihi.Views.EventInfoView({el: @$(".js-event-info[data-id=#{e.id}]"), model: e, attributes: {time: @time}})
-
 
     @updateScroll()
 

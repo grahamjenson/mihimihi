@@ -50,7 +50,7 @@ body
 .headers
   position : absolute
   top: 20px
-  left: 25%
+  left: 15%
   +text-shadow(rgba(black, .3) 2px 2px 0, rgba(black, .3) 6px 6px 0, rgba(black, .3) 4px 4px 0)
   h1
     font-family: "Amatic SC", cursive
@@ -58,11 +58,14 @@ body
     color: white
     margin-top: 40px
     margin-bottom: 58px
+    .exp
+      font-size: .5em
   .h2
-
+    margin-bottom: 10px
     font-family:  "lato"
     font-size: 2.0em
     color: white
+.footers
 
 .timeline
 
@@ -184,37 +187,48 @@ $EVENT_LEFT: $TIMELINE_X + 56px
       display: block
       float: right
 
-      svg
-        @include box-shadow(rgba(black, 0.4) 5px 5px 25px)
-        z-index: 10
-        .land
-          fill: #d7c7ad
-          stroke: #766951
-        .boundary 
-          fill: none
-          stroke: #a5967e
+.overallmap
+  position: relative
+  .play
+    font-size: 3em
+    background: rgba(black,.5)
+    position: absolute
+    z-index: 99
+    top: 200px
+    left: 200px
+  .play.playing
+    z-index: -1
+svg
+  @include box-shadow(rgba(black, 0.4) 5px 5px 25px)
+  z-index: 10
+  .land
+    fill: #d7c7ad
+    stroke: #766951
+  .boundary 
+    fill: none
+    stroke: #a5967e
 
-        .background
-          fill: #a4bac7
-          opactiy: 0
+  .background
+    fill: #a4bac7
+    opactiy: 0
 
-        $ARROW_COLOR: red
-        $ARROW_OPACITY: .5
-        $STROKE_WIDTH: 5
-        .arrow
-          opacity: $ARROW_OPACITY
-          fill: none
-          stroke: $ARROW_COLOR
-          stroke-width: $STROKE_WIDTH
+  $ARROW_COLOR: red
+  $ARROW_OPACITY: .5
+  $STROKE_WIDTH: 5
+  .arrow
+    opacity: $ARROW_OPACITY
+    fill: none
+    stroke: $ARROW_COLOR
+    stroke-width: $STROKE_WIDTH
 
-        #arrow
-          opacity: $ARROW_OPACITY
-          fill: $ARROW_COLOR
-          stroke: $ARROW_COLOR
-          stroke-width: $STROKE_WIDTH
+  #arrow
+    opacity: $ARROW_OPACITY 
+    fill: $ARROW_COLOR
+    stroke: $ARROW_COLOR
+    stroke-width: $STROKE_WIDTH
 
-        #dot
-          opacity: $ARROW_OPACITY
-          fill: $ARROW_COLOR
-          stroke: $ARROW_COLOR
-          stroke-width: $STROKE_WIDTH
+  #dot
+    opacity: $ARROW_OPACITY
+    fill: $ARROW_COLOR
+    stroke: $ARROW_COLOR
+    stroke-width: $STROKE_WIDTH

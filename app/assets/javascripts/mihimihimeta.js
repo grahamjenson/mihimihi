@@ -21,6 +21,7 @@
 //= require backbone
 //= require hamlcoffee
 //= require mihimihi
+//= require ./views/map_view
 //= require_tree ../templates
 //= require_tree ./models
 //= require_tree ./collections

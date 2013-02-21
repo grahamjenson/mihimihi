@@ -4,11 +4,79 @@
   .under
 .headers
   %h1
-    Mihimihi
+    Mihimihi 
+    %span.exp (introduction)
   %h2.h2
-    Where you are from is more important than your name
+    In Māori culture, where you are from is more important than your name.
+    %br
+    This is my mihimihi describing where I am from...
 
 #js-background
 #js-timeline
 #js-events-info
-#js-static-top
+
+.footers
+  #js-overallmap.overallmap
+    .play
+      Play Mihimihi
+  .english-mihimihi
+    200,000 years ago, my ancestors moved north from Africa eventually reacing the Arabian Peninsula around 125,000 years ago. This was the last time my ancestors were all together.
+    Over the next 100,000 years, some of my ancestors remained in the Arabian Peninsula area, and others moved along the coastline towards south asia.
+    %br
+    40,000 years ago, my ancestors that were left on the Arabian Peninsula moved north into Europe. As the last ice age recceded 10,000 years ago, they moved from Europe onto the British Isles.
+    %br
+    30,000 years ago, my south asian ancestors moved north and crossed an ice-bridge to North America reaching the area that is now the lower United States of America about 14,000 years ago. About 1,200 years ago the Cherokee people arrived at their current location.
+    %br
+    5,000 years ago, my remaining ancestors in south Asia migrated south, Island hopping until reaching Rarotonga. Then 900 years ago they went further south to New Zealand, founding the iwi Ngāti Kahungunu near Mahia.
+    %br
+    The British started to colonise United states 413 years ago, and 63 years after James Cook's first voyage to New Zealand (245 years ago) the New Zealand company's first expedition to New Zealand started in 1839.
+    %br
+    My maternal grandfather, George Underwood, was born in U.S.A., where his mother was Cherokee, and his Father's ancestors from England. My maternal grandmother is Maori from the iwi Ngāti Kahungunu, the Ngāti Pāhauwera hapū, and Waihape whānau.
+    %br
+    My paternal grandfather and grandmothers ancestors were from England. They meet in Whangarei.
+    %br 
+    My parents where born in Wellington.
+    %br
+    This is who I am, I am Graham Jenson.
+
+  .maori-mihimihi
+    .maori
+      Tēnā koutou, tēnā koutou, tēnā koutou katoa
+    .tranlate
+      Welcome, welcome, welcome to you all
+    .maori
+      Ko Tākitimu tōku waka
+    .tranlate
+      My waka (canoe) is Tākitimu
+    .maori
+      Ko Tawhirirangi tōku maunga
+    .tranlate
+      My mountain is Tawhirirangi
+    .maori
+      Ko Mohaka tōku awa
+    .tranlate
+      My river is Mohaka
+    .maori
+      Ko Ngāti Kahungunu tōku iwi
+    .tranlate
+      My iwi (tribe) is Ngāti Kahungunu
+    .maori
+      Ko Ngāti Pāhauwera tōku hapū
+    .tranlate
+      My clan is Ngāti Pāhauwera
+    .maori
+      Ko Waipapa-a-iwi me Te Huki ōku marae
+    .tranlate
+      My marae is Waipapa-a-iwi me Te Huki
+    .maori
+      Ko Renata Waihape rāua ko Pango Rewi ōku tīpuna
+    .tranlate
+      My ancestors are Renata Waihape and Pango Rewi
+    .maori
+      Ko Graham Jenson taku ingoa
+    .tranlate
+      I am Graham Jenson
+    .maori
+      Nō reira, tēnā koutou, tēnā koutou, tēnā koutou katoa
+    .tranlate
+      Therefore, welcome, welcome, welcome to you all.
