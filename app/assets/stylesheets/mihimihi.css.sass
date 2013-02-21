@@ -9,6 +9,12 @@ $TIMELINE_WIDTH: 10px
 $TIMELINE_COLOR: #0b479d
 $TIMELINE_X : 250px
 
+@mixin event-background
+  @include background-image(image-url("/assets/opaper.jpg"))
+  @include box-shadow(rgba(black, 0.4) 5px 5px 40px, rgba(black, 0.5) 0 0 100px inset)
+  @include border-radius(56px)
+  padding: 10px
+
 body
   height: 100%
   font-family: 'Lato'
@@ -35,9 +41,10 @@ body
 
 //Time line
 
+$WEAVE_HEIGHT: 150
 .weave
   position: relative
-  top: -150px
+  top: -100px
   .top
     width: 100%
     height: 300px
@@ -57,7 +64,7 @@ body
     font-size: 10em
     color: white
     margin-top: 40px
-    margin-bottom: 58px
+    margin-bottom: 50px
     .exp
       font-size: .5em
   .h2
@@ -65,6 +72,7 @@ body
     font-family:  "lato"
     font-size: 2.0em
     color: white
+    line-height: 31px
 .footers
 
 .timeline
@@ -110,16 +118,15 @@ body
     left: 250px+($MAJOR_TICK_WIDTH/2) -($TIMELINE_WIDTH/2)
 
 // EVENTs
-$EVENT_WIDTH : 900px
+$EVENT_WIDTH : 950px
 $EVENT_LEFT: $TIMELINE_X + 56px
 .event.active
   z-index: 1000
   @include box-shadow(rgba(black, 0.4) 5px 5px 60px, rgba(black, 0.5) 0 0 100px inset)
 .event
-  @include background-image(image-url("/assets/opaper.jpg"))
-  @include box-shadow(rgba(black, 0.4) 5px 5px 40px, rgba(black, 0.5) 0 0 100px inset)
+  @include event-background
+
   z-index: 900
-  @include border-top-radius(56px)
   position: absolute
   left: $EVENT_LEFT
 
@@ -142,8 +149,8 @@ $EVENT_LEFT: $TIMELINE_X + 56px
         display: inline-block
         @include border-radius(50px)
         position: relative
-        left: 16px
-        top: 0px
+        left: 8px
+        top: -4px
         z-index: 100
         background-size: 100%
         background-position: center
@@ -186,18 +193,71 @@ $EVENT_LEFT: $TIMELINE_X + 56px
       margin: 5px
       display: block
       float: right
+.footers
 
-.overallmap
   position: relative
-  .play
-    font-size: 3em
-    background: rgba(black,.5)
-    position: absolute
-    z-index: 99
-    top: 200px
-    left: 200px
-  .play.playing
-    z-index: -1
+  
+  left: $EVENT_LEFT
+  top: 300px
+
+  .mihimihi
+    @include event-background
+    width: $EVENT_WIDTH
+    h1
+      text-align: center
+      +text-shadow(rgba(black, .3) 2px 2px 0, rgba(black, .3) 6px 6px 0, rgba(black, .3) 4px 4px 0)
+      font-family: "Amatic SC", cursive
+      font-size: 10em
+      color: white
+      margin-top: 40px
+      margin-bottom: 50px
+      .exp
+        font-size: .5em
+
+    .english-mihimihi
+      margin: 10px
+      width: 55%
+      display: inline-block
+      height: 100%
+      .years
+        display: inline
+        font-weight: bold
+
+    .maori-mihimihi
+      margin: 10px
+      width: 39%
+      float: right
+      height: 100%
+      .maori
+        font-family: 'Lato'
+        font-weight: bold
+      .tranlate
+        font-style: italic
+
+    .overallmap
+      position: relative
+      .play
+        @include background-image(image-url("/assets/play_btn.png"))
+        font-size: 3em
+        position: absolute
+        z-index: 99
+        top: 150px
+        left: 400px
+        height: 128px
+        width: 128px
+
+      .play.playing
+        z-index: -1
+  
+  .end-matter
+    width: $EVENT_WIDTH
+    .references
+    .about
+      .text
+        display: inline-block
+      .img
+        display: inline-block
+
 svg
   @include box-shadow(rgba(black, 0.4) 5px 5px 25px)
   z-index: 10

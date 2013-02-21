@@ -2,7 +2,8 @@ class Mihimihi.Views.OverallMapView extends Mihimihi.Views.MapView
 
   initialize: (args) ->
     @timelineEvents = @model
-
+    @time = @attributes.time
+    
     console.log("render overall map")
     window.mmm = @
     @render()
@@ -26,8 +27,8 @@ class Mihimihi.Views.OverallMapView extends Mihimihi.Views.MapView
     ,800)
 
   render: () ->
-    width = 1000
-    height = 500
+    width = 944
+    height = 427
 
     projection = d3.geo.equirectangular()
     .scale(150)

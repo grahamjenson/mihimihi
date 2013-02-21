@@ -4,6 +4,7 @@ class Mihimihi.Views.EventInfoView extends Backbone.View
 
   initialize: (args) ->
     @time = @attributes.time
+    
     @the_event = @model
     @dropTime = 500
     @the_event.bind('change:selected', (model,selected) =>

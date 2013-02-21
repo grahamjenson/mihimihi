@@ -18,7 +18,7 @@ class Mihimihi.Views.MihimihiView extends Backbone.View
     $(@el).html(@template())
 
     realWidth = 100
-    realHeight = 10000
+    realHeight = 13000
 
     @time = d3.scale.pow().exponent(.15209).range([0, realHeight]).domain([250000, 0])
 
@@ -26,7 +26,7 @@ class Mihimihi.Views.MihimihiView extends Backbone.View
 
     bgv = new Mihimihi.Views.BackgroundView()
 
-    overallmap = new Mihimihi.Views.OverallMapView({el: '#js-overallmap', model: @timelineEvents})
+    overallmap = new Mihimihi.Views.OverallMapView({el: '#js-overallmap', model: @timelineEvents, attributes: {time: @time}})
 
 
     for e in @timelineEvents.models
