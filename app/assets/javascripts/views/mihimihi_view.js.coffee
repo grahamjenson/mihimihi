@@ -19,8 +19,9 @@ class Mihimihi.Views.MihimihiView extends Backbone.View
 
     realWidth = 100
     realHeight = 13000
+    consth = 350
 
-    @time = d3.scale.pow().exponent(.15209).range([0, realHeight]).domain([250000, 0])
+    @time = d3.scale.pow().exponent(.15209).range([consth, realHeight]).domain([200000, 0])
 
     timeline = new Mihimihi.Views.TimelineView({el: '#js-timeline', model: @timelineEvents, attributes: {time: @time}})
 
