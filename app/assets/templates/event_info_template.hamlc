@@ -1,11 +1,8 @@
-.static.event{style: 'top: #{@y-37}px'}
-  .small
-    .grabber
-      .eye
-        //%img{src: '/assets/icon_eye.png', height: '100px'}
-      - url = "#{@the_event.get('image').icon.url}"
-      .icon{style: "background: url(#{url}) no-repeat;"}
+.static.not-active.event{style: 'top: #{@y-37}px'}
+  - url = "#{@the_event.get('image').tiny.url}"
+  .icon{style: "background: url(#{url}) no-repeat;"}
 
+  .small
     .title
       = @the_event.get('title')
       .dates

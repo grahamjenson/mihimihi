@@ -42,10 +42,7 @@ class Mihimihi.Views.MihimihiView extends Backbone.View
     trange = [@time.invert(ycenter),@time.invert(ycenter-250)]
 
     be = _.sortBy(@timelineEvents.getEventsFromDate(trange), (e) -> e.get('years_ago'))[0]
-    for e in @timelineEvents.models
-      if e == be
-        console.log(e.get('title'))
-        e.set('selected',true)
-      else
-        e.set('selected',false)
+    if be
+      @timelineEvents.select(be)
+        
     

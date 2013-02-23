@@ -4,6 +4,13 @@ class Mihimihi.Collections.Events extends Backbone.Collection
 
   model: Mihimihi.Models.Event
 
+  select: (be) ->
+    for e in @models
+      if e == be
+        e.set('selected',true)
+      else
+        e.set('selected',false)
+
   initialize: (models) ->
     console.log "ASDASDSAD", models + ""
     (console.log(m) for m in @models)

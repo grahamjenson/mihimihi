@@ -123,6 +123,20 @@ $EVENT_LEFT: $TIMELINE_X + 56px
 .event.active
   z-index: 1000
   @include box-shadow(rgba(black, 0.4) 5px 5px 60px, rgba(black, 0.5) 0 0 100px inset)
+
+  .icon
+    top: 0px
+    left: -84px
+    width: 99px
+    height: 99px
+
+.event.not-active
+  .icon
+    &:hover
+      border-width: 10px
+      left: -59px - 7px
+      top: 24px - 7px
+      cursor: pointer
 .event
   @include event-background
 
@@ -130,37 +144,33 @@ $EVENT_LEFT: $TIMELINE_X + 56px
   position: absolute
   left: $EVENT_LEFT
 
+  .icon
+    position: absolute
+    display: inline-block
+    @include border-radius(50px)
+
+    z-index: 100
+    background-size: 100%
+    background-position: center
+    
+    width: 50px
+    height: 50px
+    top: 24px
+    left: -59px
+
+    border-width: 3px
+
+    border-color: #85a3ce
+    border-style: solid
+
   /* background: url('/assets/weave.jpg') */
   .small
     @include border-top-left-radius(56px)
-    height: 100px
     width: $EVENT_WIDTH
-    .grabber
-      display: inline
-      position: relative
-      left: -12px
-      top: 3px
-      .eye
-        display: inline
-        position: absolute
-        z-index: 200
-        left: -15px
-      .icon
-        display: inline-block
-        @include border-radius(50px)
-        position: relative
-        left: 8px
-        top: -4px
-        z-index: 100
-        background-size: 100%
-        background-position: center
-        width: 99px
-        height: 99px
-        @include box-shadow(rgba(black, 1) 5px 5px 25px)
-        
+    display: inline-block
+
     .title
-      margin-left: 15px
-      margin-top: 23px
+      margin: 25px
       display: inline-block
       vertical-align: top
       font-size: 2em

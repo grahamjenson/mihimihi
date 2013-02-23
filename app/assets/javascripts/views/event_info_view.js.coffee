@@ -2,6 +2,13 @@ class Mihimihi.Views.EventInfoView extends Backbone.View
 
   template: JST['event_info_template']
 
+  events:
+    'click .icon' : -> @select()
+
+  select: ->
+
+    @the_event.collection.select(@the_event)
+
   initialize: (args) ->
     @time = @attributes.time
     
@@ -25,9 +32,13 @@ class Mihimihi.Views.EventInfoView extends Backbone.View
     mapView = new Mihimihi.Views.EventMapView({model: @the_event, attributes: {dropTime: @dropTime}})
 
   expand: () ->
+    @$('.icon').attr('style', "background: url(#{@the_event.get('image').icon.url}) no-repeat;")
     @$('.large').slideDown(@dropTime);
     @$('.event').addClass('active')
+    @$('.event').removeClass('not-active')
 
   collapse: () ->
     @$('.large').slideUp(@dropTime);
     @$('.event').removeClass('active')
+    @$('.event').addClass('not-active')
+    @$('.icon').attr('style', "background: url(#{@the_event.get('image').tiny.url}) no-repeat;")
