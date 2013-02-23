@@ -10,21 +10,30 @@ class Mihimihi.Views.OverallMapView extends Mihimihi.Views.MapView
     @$('.play').on('click', () => @animate())
 
   animate : () ->
-    @$('.play').addClass('playing')
+    @$('.play, .countdown, .title').addClass('playing')
+
     done = []
-    (@clearFeatures(f) for f in @allFeatures)
+    (@clearFeatures(f.feature) for f in @allFeatures)
+    timing = 0
+    @$('.countdown').text("")
+    @$('.title').text("Tēnā koutou, tēnā koutou, tēnā koutou katoa")
     ninterval = setInterval(() =>
       d = true
-      for f in @allFeatures
+      for ef in @allFeatures
+        e = ef.event
+        f = ef.feature
         if not (f in done)
           done.push(f)
+          @$('.countdown').text("#{e.get('years_ago').addCommas()} years ago")
+          @$('.title').text("#{e.get('title')}")
           @animateFeatures(f)
           d = false
           break
       if d 
         clearInterval(ninterval)
-        @$('.play').removeClass('playing')
-    ,800)
+        @$('.play, .countdown, .title').removeClass('playing')
+    ,2000)
+
 
   render: () ->
     width = 944
@@ -64,6 +73,6 @@ class Mihimihi.Views.OverallMapView extends Mihimihi.Views.MapView
     for e in _.sortBy(@timelineEvents.models, (e) -> - e.get("years_ago")) 
       g = svg.append('g')
       features = @addFeatures(@getFeatures(e.get('lonlat')),g)
-      @allFeatures.push(features)
+      @allFeatures.push({event: e, feature: features})
       @clearFeatures(features)
 

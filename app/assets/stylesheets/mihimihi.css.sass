@@ -156,6 +156,8 @@ $EVENT_LEFT: $TIMELINE_X + 56px
         background-position: center
         width: 99px
         height: 99px
+        @include box-shadow(rgba(black, 1) 5px 5px 25px)
+        
     .title
       margin-left: 15px
       margin-top: 23px
@@ -184,7 +186,7 @@ $EVENT_LEFT: $TIMELINE_X + 56px
         margin-right: 5px
         margin-bottom: 2px
         width: 200px
-        height: 200px
+        @include box-shadow(rgba(black, 1) 5px 5px 25px)
     .map
       $MAP_HEIGHT: 250px
       $MAP_WEIGHT: 500px
@@ -248,6 +250,35 @@ $EVENT_LEFT: $TIMELINE_X + 56px
 
       .play.playing
         z-index: -1
+
+      .countdown.playing
+        z-index: 99
+
+      .countdown
+        z-index: -1
+        font-size: 2em
+        position: absolute
+        top: 375px
+        left: 10px
+        height: 128px
+        width: 25%
+        text-align: right
+        font-family: 'lato'
+
+      .title.playing
+        z-index: 99
+
+      .title
+        z-index: -1
+        font-size: 2em
+        position: absolute
+        top: 375px
+        left: 30%
+        height: 128px
+        width: 65%
+        text-align: left
+        font-family: 'lato'
+
   
   .end-matter
     width: $EVENT_WIDTH

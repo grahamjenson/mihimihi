@@ -21,6 +21,8 @@
       My Mihimihi
     #js-overallmap.overallmap{align: "center"}
       .play
+      .countdown
+      .title
     .english-mihimihi
       .years
         200,000 years ago 
