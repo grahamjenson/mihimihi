@@ -10,7 +10,7 @@ $TIMELINE_COLOR: #0b479d
 $TIMELINE_X : 250px
 
 @mixin event-background
-  @include background-image(image-url("/assets/opaper.jpg"))
+  @include background-image(image-url("/assets/o.jpg"))
   @include box-shadow(rgba(black, 0.4) 5px 5px 40px, rgba(black, 0.5) 0 0 100px inset)
   @include border-radius(56px)
   padding: 10px
@@ -81,6 +81,8 @@ $WEAVE_HEIGHT: 150
   .majortick
     z-index: 10
     .timetext
+      position: relative
+      left: -30px
       width: $TIMELINE_X
       font-size: 4em
       text-align: right

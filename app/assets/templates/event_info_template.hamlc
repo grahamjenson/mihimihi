@@ -1,4 +1,5 @@
 .static.not-active.event{style: 'top: #{@y-37}px'}
+  .top-bit
   - url = "#{@the_event.get('image').tiny.url}"
   .icon{style: "background: url(#{url}) no-repeat;"}
 
