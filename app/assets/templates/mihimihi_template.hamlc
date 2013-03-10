@@ -54,7 +54,7 @@
       %br
       .years
         5,000 years ago, 
-      my remaining ancestors in south Asia migrated south, Island hopping until reaching Rarotonga. Then 
+      my remaining ancestors in south Asia migrated south, island hopping until reaching Rarotonga. Then 
       .years 
         900 years ago
       they went further south to New Zealand, founding the iwi Ngāti Kahungunu near Mahia.
@@ -75,7 +75,7 @@
       I (Graham Jenson) was born 
       .years
         27 years ago
-      and this is the story of where I am from.
+      in Raetihi and this is the story of where I am from.
 
     .maori-mihimihi
       .maori
@@ -135,16 +135,19 @@
       .text
         More recently I (Graham Jenson) am working as a software developer in Wellington.
         I have just finshed my Ph.D. at Massey University Palmerston North in Computer Science and Software Engineering.
-        I enjoy photography, Starcraft 2, and Ukrainian cuisine. 
+        I am getting married in November; this project is a way to describe my heritage to my future wife.
         I researched, developed and designed this site. 
         Check out my website at
         %a{href: 'http://maori.geek.nz', target: '_blank'}
           maori.geek.nz
+        and blog at
+          %a{href: 'http://hashbang.co.nz/blog', target: '_blank'}
+            HashBang.
     .thanks
       %h2
         Thanks to
       %ul
-        %li Thanks to 
+        %li
           %a{href: 'http://hashbang.co.nz/', target: '_blank'}
             HashBang
         %li Thanks to Parents (and transitively to ancestors)

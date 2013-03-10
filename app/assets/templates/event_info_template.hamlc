@@ -5,7 +5,8 @@
 
   .small
     .title
-      = @the_event.get('title')
+      %h2
+        = @the_event.get('title')
       .dates
         %em
           = "#{@the_event.get('years_ago').addCommas()}"

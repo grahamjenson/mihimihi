@@ -170,16 +170,22 @@ $EVENT_LEFT: $TIMELINE_X + 56px
     @include border-top-left-radius(56px)
     width: $EVENT_WIDTH
     display: inline-block
-
+    height: 50
+    margin-left: 18px
     .title
-      margin: 25px
-      display: inline-block
-      vertical-align: top
-      font-size: 2em
+      font-family: "Lato"
+      h2
+        font-family: verdana,arial,helvetica,sans-serif
+        display: inline-block
+        font-size: 3em
+        font-weight: 600
+        +text-shadow(rgba(black, .3) 2px 2px 0)
+        margin-bottom: 6px
+        margin-top: 29px
       .dates
-        margin-top: 2px
-        vertical-align: top
-        font-size: 0.5em
+        font-size: 1.5em
+        margin-left: 20px
+        margin-top: 5px
     .bot-bit
       .hr
       .hr-end
@@ -195,18 +201,21 @@ $EVENT_LEFT: $TIMELINE_X + 56px
       margin-right: 10px
       img
         float: left
-        margin-right: 5px
-        margin-bottom: 2px
+        margin-right: 8px
+        margin-left: 10px
+        margin-bottom: 5px
         width: 200px
         @include box-shadow(rgba(black, 1) 5px 5px 25px)
     .map
       $MAP_HEIGHT: 250px
       $MAP_WEIGHT: 500px
-
       position: relative
       margin: 5px
       display: block
       float: right
+      svg
+        margin-bottom: 10px  
+
 .footers
 
   position: relative
