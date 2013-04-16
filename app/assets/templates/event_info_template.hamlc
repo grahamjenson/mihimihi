@@ -13,12 +13,11 @@
           - if @the_event.get('over_time')
             = "- #{@the_event.get('over_time').addCommas()}"
           = "years ago"
-    .bot-bit
-      .hr
-      .hr-end
+    .summary
+    .js-map.map{"data-id": @the_event.id, 'align': 'right'}
+      .around
+
   .large
     
     .content
 
-      .js-map.map{"data-id": @the_event.id, 'align': 'right'}
-        .around

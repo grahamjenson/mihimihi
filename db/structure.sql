@@ -61,7 +61,8 @@ CREATE TABLE events (
     years_ago integer,
     over_time integer,
     lonlat text,
-    image character varying(255)
+    image character varying(255),
+    summary text
 );
 
 
@@ -201,3 +202,5 @@ INSERT INTO schema_migrations (version) VALUES ('20130218092255');
 INSERT INTO schema_migrations (version) VALUES ('20130219204026');
 
 INSERT INTO schema_migrations (version) VALUES ('20130219223355');
+
+INSERT INTO schema_migrations (version) VALUES ('20130402075548');
