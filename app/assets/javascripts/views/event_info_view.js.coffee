@@ -6,7 +6,6 @@ class Mihimihi.Views.EventInfoView extends Backbone.View
     'click .icon' : -> @select()
 
   select: ->
-
     @the_event.collection.select(@the_event)
 
   initialize: (args) ->
@@ -30,7 +29,25 @@ class Mihimihi.Views.EventInfoView extends Backbone.View
     @$('.summary').append(@the_event.get('summary'))
     @$('.content').append(@the_event.get('content'))
     
-    mapView = new Mihimihi.Views.EventMapView({model: @the_event, attributes: {dropTime: @dropTime}})
+    mapView = new Mihimihi.Views.EventMapView({
+      el: @$(".js-map[data-id=#{@the_event.id}]")
+      model: @the_event, 
+      attributes: {
+        dropTime: @dropTime,
+        height: 125
+        width: 250
+      }
+    })
+
+    bigMapView = new Mihimihi.Views.EventMapView({
+      el: @$(".js-big-map[data-id=#{@the_event.id}]")
+      model: @the_event, 
+      attributes: {
+        dropTime: @dropTime,
+        height: 250
+        width: 500
+      }
+    })
 
   expand: () ->
     @$('.icon').attr('style', "background: url(#{@the_event.get('image').icon.url}) no-repeat;")

@@ -1,4 +1,10 @@
 .backimg
+.backpics
+  .well.backimg{'data-yo': 241}
+    %img.img-rounded{src: "http://www.digitalnz.org/thumbnails/from_large/664/?resize=520x840&amp;src=http%3A%2F%2F49.50.242.36%2Fimages%2Fzoom%2F1981-1990%2F1988_35_2.jpg"}
+
+#js-current-date.current-time
+
 .weave
   .top
   .under
@@ -151,4 +157,5 @@
           %a{href: 'http://hashbang.co.nz/', target: '_blank'}
             HashBang
         %li Thanks to Parents (and transitively to ancestors)
-        
+        %li
+          I would like to dedicate this site to my Grandparents (Warren and Brenda) and Uncle Brian who helped me understand the importance of heritage. 

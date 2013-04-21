@@ -29,6 +29,7 @@ class Mihimihi.Views.MihimihiView extends Backbone.View
 
     overallmap = new Mihimihi.Views.OverallMapView({el: '#js-overallmap', model: @timelineEvents, attributes: {time: @time}})
 
+    new Mihimihi.Views.ImageFloats(el: $('.backpics'), attributes: {time: @time})
 
     for e in @timelineEvents.models
       @$('#js-events-info').append("<div class='js-event-info' data-id='#{e.id}''></div>")
@@ -38,11 +39,9 @@ class Mihimihi.Views.MihimihiView extends Backbone.View
 
   updateScroll: -> 
     #select events
-    ycenter = $(window).scrollTop() + 100
-    trange = [@time.invert(ycenter),@time.invert(ycenter-250)]
+    
 
-    be = _.sortBy(@timelineEvents.getEventsFromDate(trange), (e) -> e.get('years_ago'))[0]
-    if be
-      @timelineEvents.select(be)
+    ycenter = $(window).scrollTop() + ($(window).height()/2)
+    $('#js-current-date').text("#{@time.invert(ycenter).truncate().addCommas()} years ago" )
         
     

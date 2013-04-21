@@ -12,8 +12,6 @@ class Mihimihi.Collections.Events extends Backbone.Collection
         e.set('selected',false)
 
   initialize: (models) ->
-    console.log "ASDASDSAD", models + ""
-    (console.log(m) for m in @models)
 
   parse: (resp) ->
     ret = []

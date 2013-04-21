@@ -13,6 +13,7 @@
 //= require static/world-110m.js
 //= require jquery
 //= require jquery_ujs
+//= require bootstrap
 //= require markdown
 //= require d3.v3
 //= require raphael-min

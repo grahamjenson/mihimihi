@@ -1,10 +1,10 @@
-.static.not-active.event{style: 'top: #{@y-37}px'}
+.static.not-active.event{style: 'top: #{@y-49}px'}
   .top-bit
   - url = "#{@the_event.get('image').tiny.url}"
   .icon{style: "background: url(#{url}) no-repeat;"}
-
   .small
-    .title
+    .js-map.map.pull-left{"data-id": @the_event.id}
+    .title.pull-left
       %h2
         = @the_event.get('title')
       .dates
@@ -13,11 +13,23 @@
           - if @the_event.get('over_time')
             = "- #{@the_event.get('over_time').addCommas()}"
           = "years ago"
-    .summary
-    .js-map.map{"data-id": @the_event.id, 'align': 'right'}
-      .around
+      .summary
+        = @the_event.get('summary')
+    %a.action.btn.btn-success.pull-right{:href => "#modal-#{@the_event.id}", 'data-toggle' =>"modal"}
+      %i.icon-plus.icon-white
+      Read More
 
-  .large
-    
+.event-modal.modal.hide.fade{id: "modal-#{@the_event.id}", 'tabindex' => "-1", 'role' => "dialog", 'aria-labelledby' => "myModalLabel", 'aria-hidden' => "true"}
+  .modal-header
+    %button.close{'data-dismiss' => "modal", 'aria-hidden' => "true", 'type' => 'button'}
+      ×
+    %h3
+      = @the_event.get('title')
+  .modal-body
+    .pull-left.js-big-map.map{"data-id": @the_event.id}
     .content
+  .modal-footer
+    %button.btn.close{'data-dismiss' => "modal", 'aria-hidden' => "true", 'type' => 'button'}
+      Close
+
 

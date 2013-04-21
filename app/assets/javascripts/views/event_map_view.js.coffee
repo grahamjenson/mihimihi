@@ -5,6 +5,8 @@ class Mihimihi.Views.EventMapView extends Mihimihi.Views.MapView
   initialize: (args) ->
     @the_event = @model
     @dropTime = @attributes.dropTime
+    @width = @attributes.width
+    @height = @attributes.height
 
     @the_event.bind('change:selected', (model,selected) =>
       if selected
@@ -18,8 +20,8 @@ class Mihimihi.Views.EventMapView extends Mihimihi.Views.MapView
 
 
   render: () ->
-    width = 500
-    height = 250
+    width = @width
+    height = @height
 
     lonlat = @the_event.get('lonlat')
 
@@ -32,8 +34,6 @@ class Mihimihi.Views.EventMapView extends Mihimihi.Views.MapView
     [xc,yc] = d3.geo.centroid(lonlat)
     distToCenterOfBbox = @calcDist([x2, y2],[xc,yc])
     
-
-
     minScale = 79
     maxScale = 300    
     scaleCalc = d3.scale.linear().range([maxScale,minScale]).domain([0,5000]).clamp(true)
@@ -44,7 +44,6 @@ class Mihimihi.Views.EventMapView extends Mihimihi.Views.MapView
     #move center to 0,0
     #rotate map to center on coordinates
     s = scaleCalc(distToCenterOfBbox)
-    console.log "BBOX #{@the_event.get('title')}", distToCenterOfBbox, s
     projection = d3.geo.equirectangular()
     .scale(s)
     .translate([width/2,height/2])
@@ -53,6 +52,8 @@ class Mihimihi.Views.EventMapView extends Mihimihi.Views.MapView
       projection.rotate(ll_center)
     else
       projection.rotate([-180,0])
+
+    projection.clipExtent([[-50,-50],[width+50,height+50]])
     @path = d3.geo.path().projection(projection);
 
     #bounds takes feature
@@ -61,11 +62,10 @@ class Mihimihi.Views.EventMapView extends Mihimihi.Views.MapView
     
     graticule = d3.geo.graticule();
 
-    el = $(".js-map[data-id=#{@the_event.id}]")[0]
-    svg = d3.select(el).append("svg")
+    svg = d3.select(@el).append("svg")
       .attr("width", width)
-      .attr("height", height);
-    
+      .attr("height", height)
+
     @addMarkers(svg)
 
     svg.append("path")

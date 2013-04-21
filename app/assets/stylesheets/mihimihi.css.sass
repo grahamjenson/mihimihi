@@ -21,6 +21,22 @@ body
   @include background-image(linear-gradient(left, rgba(255,255,255,0) 0%, rgba(0,0,0,.3) 80%),image-url("/assets/woven.png"))
 
 
+.backpics
+  position: absolute
+  .backimg
+    width: 100%
+    position: absolute
+
+
+.current-time
+  position: fixed
+  font-size: 16em
+  color: grey
+  opacity: .3
+  top: 50%
+  right: 25%
+  font-family: "Amatic SC", cursive
+
 .static
   position: absolute
 
@@ -121,31 +137,38 @@ $WEAVE_HEIGHT: 150
     background: $TIMELINE_COLOR
     left: 250px+($MAJOR_TICK_WIDTH/2) -($TIMELINE_WIDTH/2)
 
+
+
 // EVENTs
 $EVENT_WIDTH : 950px
 $EVENT_LEFT: $TIMELINE_X + 56px
+
 .event.active
   z-index: 1000
   @include box-shadow(rgba(black, 0.4) 5px 5px 60px, rgba(black, 0.5) 0 0 100px inset)
 
   .icon
-    top: 0px
+    top: 12px
     left: -84px
     width: 99px
     height: 99px
+
+$ICON_X: 36px
 
 .event.not-active
   .icon
     &:hover
       border-width: 10px
       left: -59px - 7px
-      top: 24px - 7px
+      top: $ICON_X - 7px
       cursor: pointer
 
 .event
   @include event-background
 
-  z-index: 900
+  &:hover
+    z-index: 500
+
   position: absolute
   left: $EVENT_LEFT
 
@@ -160,7 +183,7 @@ $EVENT_LEFT: $TIMELINE_X + 56px
     
     width: 50px
     height: 50px
-    top: 24px
+    top: $ICON_X
     left: -59px
 
     border-width: 3px
@@ -172,58 +195,50 @@ $EVENT_LEFT: $TIMELINE_X + 56px
   .small
     @include border-top-left-radius(56px)
     width: $EVENT_WIDTH
-    display: inline-block
     height: 50
     margin-left: 18px
     .title
       font-family: "Lato"
+
       h2
         font-family: verdana,arial,helvetica,sans-serif
-        display: inline-block
         font-size: 3em
         font-weight: 600
         +text-shadow(rgba(black, .3) 2px 2px 0)
-        margin-bottom: 6px
-        margin-top: 29px
       .dates
         font-size: 1.5em
         margin-left: 20px
         margin-top: 5px
-    .map
-      $MAP_HEIGHT: 250px
-      $MAP_WEIGHT: 500px
-      position: absolute
-      z-index: -1
-      margin: 5px
-      display: block
-      float: right
-      svg
-        margin-bottom: 10px  
-
-
-  .large
-    width: $EVENT_WIDTH
-    left: 30px
-    .content
-      display: inline-block
-      vertical-align: top
-      float: right
-      width: $EVENT_WIDTH - 20px
-      margin-right: 10px
-      img
-        float: left
-        margin-right: 8px
+      
+      .summary
+        font-size: 1.2em
+        margin-top: 10px
         margin-left: 10px
-        margin-bottom: 5px
-        width: 200px
-        @include box-shadow(rgba(black, 1) 5px 5px 25px)
+
+    .map
+    
+    .action
+      position: absolute
+      top: 40%
+      right: 6px
+
+
+.modal.fade.in
+  top: 35%
+
+.event-modal
+  width: 50%
+  top: 10%
+  left: 42%
+  .modal-body
+    max-height: 500px
 
 .footers
 
   position: relative
   
   left: $EVENT_LEFT
-  top: 350px
+  top: 125px
 
   .mihimihi
     @include event-background
@@ -313,6 +328,8 @@ $EVENT_LEFT: $TIMELINE_X + 56px
         display: inline-block
 
 svg
+  background-color: #a4bac7
+
   .land
     fill: #d7c7ad
     stroke: #766951

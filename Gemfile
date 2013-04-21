@@ -11,7 +11,7 @@ gem 'thin'
 gem 'haml-rails'
 gem 'google-webfonts'
 
-gem 'bootstrap-sass', '~> 2.1.0.0'
+gem 'bootstrap-sass', '~> 2.3.1.0'
 
 gem 'backbone-on-rails'
 gem 'haml_coffee_assets'

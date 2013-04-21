@@ -76,7 +76,6 @@ class Mihimihi.Views.MapView extends Backbone.View
 
 
   clearFeatures: (features) ->
-    console.log "CLEAR", features
     features.attr("d", ()->"M-100,-100L-100,-100")
 
   pathForMarker: (marker) ->
