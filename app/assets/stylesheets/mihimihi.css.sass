@@ -143,28 +143,15 @@ $WEAVE_HEIGHT: 150
 $EVENT_WIDTH : 950px
 $EVENT_LEFT: $TIMELINE_X + 56px
 
-.event.active
-  z-index: 1000
-  @include box-shadow(rgba(black, 0.4) 5px 5px 60px, rgba(black, 0.5) 0 0 100px inset)
+  
 
-  .icon
-    top: 12px
-    left: -84px
-    width: 99px
-    height: 99px
 
 $ICON_X: 36px
 
-.event.not-active
-  .icon
-    &:hover
-      border-width: 10px
-      left: -59px - 7px
-      top: $ICON_X - 7px
-      cursor: pointer
 
 .event
   @include event-background
+  @include box-shadow(rgba(black, 0.4) 5px 5px 60px, rgba(black, 0.5) 0 0 100px inset)
 
   &:hover
     z-index: 500
@@ -181,10 +168,10 @@ $ICON_X: 36px
     background-size: 100%
     background-position: center
     
-    width: 50px
-    height: 50px
-    top: $ICON_X
-    left: -59px
+    top: 12px
+    left: -84px
+    width: 99px
+    height: 99px
 
     border-width: 3px
 
@@ -224,11 +211,9 @@ $ICON_X: 36px
 
 
 .modal.fade.in
-  top: 35%
 
 .event-modal
   width: 50%
-  top: 10%
   left: 42%
   .modal-body
     max-height: 500px

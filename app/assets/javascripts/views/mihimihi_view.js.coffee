@@ -39,8 +39,6 @@ class Mihimihi.Views.MihimihiView extends Backbone.View
 
   updateScroll: -> 
     #select events
-    
-
     ycenter = $(window).scrollTop() + ($(window).height()/2)
     $('#js-current-date').text("#{@time.invert(ycenter).truncate().addCommas()} years ago" )
         

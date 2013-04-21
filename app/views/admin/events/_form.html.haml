@@ -15,11 +15,11 @@
     = f.label :title
     = f.text_field :title
   .field
+    = f.label :summary
+    = f.text_area :summary, :size => '100x1'
+  .field
     = f.label :content
     = f.text_area :content
-  .field
-    = f.label :summary
-    = f.text_area :summary
   .field
     = f.label :years_ago
     = f.text_field :years_ago

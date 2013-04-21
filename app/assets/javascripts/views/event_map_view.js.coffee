@@ -10,14 +10,16 @@ class Mihimihi.Views.EventMapView extends Mihimihi.Views.MapView
 
     @the_event.bind('change:selected', (model,selected) =>
       if selected
-        @clearFeatures(@features)
-        setTimeout(() => 
-          @animateFeatures(@features)
-        , @dropTime)
-    ) 
+        @animate()
+    )
 
     @render() 
 
+  animate: ->
+    @clearFeatures(@features)
+    setTimeout(() => 
+      @animateFeatures(@features)
+    , @dropTime)
 
   render: () ->
     width = @width
@@ -43,7 +45,9 @@ class Mihimihi.Views.EventMapView extends Mihimihi.Views.MapView
     #scale to right size
     #move center to 0,0
     #rotate map to center on coordinates
+
     s = scaleCalc(distToCenterOfBbox)
+    
     projection = d3.geo.equirectangular()
     .scale(s)
     .translate([width/2,height/2])

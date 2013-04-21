@@ -13,23 +13,32 @@ class Mihimihi.Views.EventInfoView extends Backbone.View
     
     @the_event = @model
     @dropTime = 500
-    @the_event.bind('change:selected', (model,selected) =>
-      if selected
-        @expand()
-      else
-        @collapse()
+
+    $(window).scroll((e) =>
+      @animate()
     )
+    $(window).resize((e) =>
+      @animate()
+    )
+
     @render()
 
+  animate: ->
+    ycenter = $(window).scrollTop() + ($(window).height()/2)
+    if @y < ycenter - 200 or @y > ycenter + 200
+      @the_event.set('selected',false)
+    else
+      @the_event.set('selected',true)
 
   render: () ->
-    y = @time(@the_event.get('years_ago'))
+    @y = @time(@the_event.get('years_ago'))
+    y = @y
     $(@el).append(@template({the_event: @the_event, y: y}))
     @$('.large').hide();
     @$('.summary').append(@the_event.get('summary'))
     @$('.content').append(@the_event.get('content'))
     
-    mapView = new Mihimihi.Views.EventMapView({
+    @mapView = new Mihimihi.Views.EventMapView({
       el: @$(".js-map[data-id=#{@the_event.id}]")
       model: @the_event, 
       attributes: {
@@ -39,7 +48,7 @@ class Mihimihi.Views.EventInfoView extends Backbone.View
       }
     })
 
-    bigMapView = new Mihimihi.Views.EventMapView({
+    @bigMapView = new Mihimihi.Views.EventMapView({
       el: @$(".js-big-map[data-id=#{@the_event.id}]")
       model: @the_event, 
       attributes: {
@@ -49,14 +58,7 @@ class Mihimihi.Views.EventInfoView extends Backbone.View
       }
     })
 
-  expand: () ->
-    @$('.icon').attr('style', "background: url(#{@the_event.get('image').icon.url}) no-repeat;")
-    @$('.large').slideDown(@dropTime);
-    @$('.event').addClass('active')
-    @$('.event').removeClass('not-active')
+    @$('.action').click( => 
+      @bigMapView.animate()
+    )
 
-  collapse: () ->
-    @$('.large').slideUp(@dropTime);
-    @$('.event').removeClass('active')
-    @$('.event').addClass('not-active')
-    @$('.icon').attr('style', "background: url(#{@the_event.get('image').tiny.url}) no-repeat;")

@@ -1,6 +1,6 @@
 .static.not-active.event{style: 'top: #{@y-49}px'}
   .top-bit
-  - url = "#{@the_event.get('image').tiny.url}"
+  - url = "#{@the_event.get('image').icon.url}"
   .icon{style: "background: url(#{url}) no-repeat;"}
   .small
     .js-map.map.pull-left{"data-id": @the_event.id}
