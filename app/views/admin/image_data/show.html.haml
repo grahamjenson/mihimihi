@@ -1,0 +1,18 @@
+%p#notice= notice
+
+%p
+  %b Link:
+  = @image_datum.link
+%p
+  %b Title:
+  = @image_datum.title
+%p
+  %b Image:
+  = @image_datum.image
+%p
+  %b Years ago:
+  = @image_datum.years_ago
+
+= link_to 'Edit', edit_admin_image_datum_path(@image_datum)
+\|
+= link_to 'Back', admin_image_data_path

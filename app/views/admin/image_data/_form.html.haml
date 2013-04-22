@@ -1,0 +1,28 @@
+- if @image_datum.id != nil
+  - url = admin_image_datum_path(@image_datum)
+- else
+  - url = admin_image_datum_path
+
+= form_for @image_datum, :url => url, :html => {:multipart => true} do |f|
+  - if @image_datum.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@image_datum.errors.count, "error")} prohibited this image_datum from being saved:"
+      %ul
+        - @image_datum.errors.full_messages.each do |msg|
+          %li= msg
+
+  .field
+    = f.label :link
+    = f.text_field :link
+  .field
+    = f.label :title
+    = f.text_field :title
+  .field
+    = f.label :years_ago
+    = f.number_field :years_ago
+  .field
+    = f.label :image
+    = f.file_field :image
+
+  .actions
+    = f.submit 'Save'

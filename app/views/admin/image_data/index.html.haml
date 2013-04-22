@@ -1,0 +1,28 @@
+%h1 Listing image_data
+
+%table.table.table-striped
+  %tr
+    %th Link
+    %th Title
+    %th Image
+    %th Years ago
+    %th
+    %th
+    %th
+
+  - @image_data.each do |image_datum|
+    %tr
+      %td
+        %a{:href => image_datum.link, :target => '_blank'}
+          link
+      %td= image_datum.title
+      %td
+        %img{:src => image_datum.image.medium}
+      %td= image_datum.years_ago
+      %td= link_to 'Show', admin_image_datum_path(image_datum)
+      %td= link_to 'Edit', edit_admin_image_datum_path(image_datum)
+      %td= link_to 'Destroy', admin_image_datum_path(image_datum), :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Image datum', new_admin_image_datum_path

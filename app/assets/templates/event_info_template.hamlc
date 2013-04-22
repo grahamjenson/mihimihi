@@ -25,10 +25,11 @@
       ×
     %h3
       = @the_event.get('title')
+  .js-big-map.map{"data-id": @the_event.id}
   .modal-body
-    .pull-left.js-big-map.map{"data-id": @the_event.id}
     .content
   .modal-footer
+    
     %button.btn.close{'data-dismiss' => "modal", 'aria-hidden' => "true", 'type' => 'button'}
       Close
 

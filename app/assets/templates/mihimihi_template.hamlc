@@ -1,7 +1,4 @@
 .backimg
-.backpics
-  .well.backimg{'data-yo': 241}
-    %img.img-rounded{src: "http://www.digitalnz.org/thumbnails/from_large/664/?resize=520x840&amp;src=http%3A%2F%2F49.50.242.36%2Fimages%2Fzoom%2F1981-1990%2F1988_35_2.jpg"}
 
 #js-current-date.current-time
 
@@ -70,18 +67,35 @@
         413 years ago. 
       .years
         169 years ago 
-      My great, great, great grandfather arrived in New Zealand as part of the british army, promised land and a pension after serving the army and being wounded.
+      the great, grandfather of my paternal grandfather arrived in New Zealand as part of the british army, promised land and a pension after serving the army and being wounded.
       %br
-      My maternal grandfather was born in Missouri U.S.A., where his mother was Cherokee and his Father's ancestors were from England. My maternal grandmother was Maori from the iwi Ngāti Kahungunu, the Ngāti Pāhauwera hapū, and Waihape whānau.
+      .years
+        115 years ago
+      my maternal grandfather was born in Missouri U.S.A. His mother was Cherokee and his Father's ancestors were from England. 
+      .years
+        101 years ago
+      my maternal grandmother was born. She was Maori from the iwi Ngāti Kahungunu, the Ngāti Pāhauwera hapū, and Waihape whānau.
       %br
-      My paternal grandfather and grandmothers ancestors came from England to New Zealand.
-      %br 
-      My mother was born in Lower Hutt and my father was born in Mangakino.
+      My paternal grandfather was born
+      .years
+        89 years ago
+      and my grandmother
+      .years
+        87 years ago.
+      Their ancestors came from England to New Zealand.
+      %br
+      .years
+        59 years ago
+      my father was born in Mangakino while his father worked on the damn, and 
+      .year
+        58 years ago
+      my mother was born in Lower Hutt. They later meet at teachers college and got married. 
       %br
       I (Graham Jenson) was born 
       .years
         27 years ago
-      in Raetihi and this is the story of where I am from.
+      in Raetihi where my parents were teaching,
+      and this is the story of where I am from.
 
     .maori-mihimihi
       .maori
@@ -139,16 +153,16 @@
       .img
         %img{src: '/assets/me.jpg'}
       .text
-        More recently I (Graham Jenson) am working as a software developer in Wellington.
+        More recently I (Graham Jenson) have been working as a software developer in Wellington.
         I have just finshed my Ph.D. at Massey University Palmerston North in Computer Science and Software Engineering.
-        I am getting married in November; this project is a way to describe my heritage to my future wife.
+        I am getting married in November.
         I researched, developed and designed this site. 
         Check out my website at
         %a{href: 'http://maori.geek.nz', target: '_blank'}
           maori.geek.nz
         and blog at
-          %a{href: 'http://hashbang.co.nz/blog', target: '_blank'}
-            HashBang.
+        %a{href: 'http://hashbang.co.nz/blog', target: '_blank'}
+          HashBang.
     .thanks
       %h2
         Thanks to
@@ -158,4 +172,4 @@
             HashBang
         %li Thanks to Parents (and transitively to ancestors)
         %li
-          I would like to dedicate this site to my Grandparents (Warren and Brenda) and Uncle Brian who helped me understand the importance of heritage. 
+          I would like to dedicate this site to my Grandparents (Warren and Brenda) and Uncle Brian. They helped me understand the importance of where I am from. 

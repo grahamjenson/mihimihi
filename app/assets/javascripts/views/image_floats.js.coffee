@@ -12,6 +12,7 @@ class Mihimihi.Views.ImageFloats extends Backbone.View
     )
 
     @render()
+    $(@el).removeClass('hide')
 
   render: () ->
     _this = @
@@ -23,5 +24,4 @@ class Mihimihi.Views.ImageFloats extends Backbone.View
     ycenter = $(window).scrollTop() + ($(window).height()/2)
     yo = img_el.attr('data-yo')
     img_el.css('top', @.time(yo))
-    img_el.css('width', '100px')
 

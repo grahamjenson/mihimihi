@@ -23,10 +23,12 @@ body
 
 .backpics
   position: absolute
+  width: 100%
   .backimg
-    width: 100%
+    width: 308px
     position: absolute
-
+    right: 100px
+    z-index: 5
 
 .current-time
   position: fixed
@@ -152,7 +154,7 @@ $ICON_X: 36px
 .event
   @include event-background
   @include box-shadow(rgba(black, 0.4) 5px 5px 60px, rgba(black, 0.5) 0 0 100px inset)
-
+  z-index: 10
   &:hover
     z-index: 500
 
@@ -213,11 +215,20 @@ $ICON_X: 36px
 .modal.fade.in
 
 .event-modal
-  width: 50%
+  width: 800px
   left: 42%
+  
   .modal-body
     max-height: 500px
-
+    min-height: 500px
+    .content
+      position: relative
+      z-index: 10
+  .map
+    position: absolute
+    left: 0
+    opacity: .3
+    z-index: 2
 .footers
 
   position: relative
