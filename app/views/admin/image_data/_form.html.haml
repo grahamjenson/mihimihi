@@ -1,7 +1,7 @@
 - if @image_datum.id != nil
   - url = admin_image_datum_path(@image_datum)
 - else
-  - url = admin_image_datum_path
+  - url = admin_image_data_path
 
 = form_for @image_datum, :url => url, :html => {:multipart => true} do |f|
   - if @image_datum.errors.any?
