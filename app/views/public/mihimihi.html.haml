@@ -1,9 +1,10 @@
 .backpics.hide
   - ImageDatum.all.each do |id|
-    .well.backimg{'data-yo' => id.years_ago}
-      %a{:href => id.link , :target => '_blank'}
-        %img.img-rounded{:src => id.image.medium }
-        = id.title
+    - if id.years_ago
+      .well.backimg{'data-yo' => id.years_ago}
+        %a{:href => id.link , :target => '_blank'}
+          %img.img-rounded{:src => id.image.medium }
+          = id.title
 #container
   #loading
     = image_tag("loading.gif", {:id =>"loading-gif"})

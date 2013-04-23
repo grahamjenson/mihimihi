@@ -10,7 +10,7 @@
     %th
     %th
 
-  - @image_data.each do |image_datum|
+  - @image_data.sort_by{|x| x.years_ago || 1000000}.each do |image_datum|
     %tr
       %td
         %a{:href => image_datum.link, :target => '_blank'}

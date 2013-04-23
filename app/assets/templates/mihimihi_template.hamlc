@@ -64,7 +64,8 @@
       %br
       The British started to colonise United states 
       .years 
-        413 years ago. 
+        413 years ago.
+      %br
       .years
         169 years ago 
       the great, grandfather of my paternal grandfather arrived in New Zealand as part of the british army, promised land and a pension after serving the army and being wounded.
@@ -94,8 +95,10 @@
       I (Graham Jenson) was born 
       .years
         27 years ago
-      in Raetihi where my parents were teaching,
-      and this is the story of where I am from.
+      in Raetihi where my parents were teaching.
+      %br
+        %b
+          This is my Mihimihi, the story of where I am from.
 
     .maori-mihimihi
       .maori

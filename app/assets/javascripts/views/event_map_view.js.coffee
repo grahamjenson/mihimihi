@@ -51,7 +51,7 @@ class Mihimihi.Views.EventMapView extends Mihimihi.Views.MapView
     projection = d3.geo.equirectangular()
     .scale(s)
     .translate([width/2,height/2])
-    if s != 79
+    if s != minScale
       #this scale shows the whole world, do not rotate
       projection.rotate(ll_center)
     else
