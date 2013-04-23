@@ -15,7 +15,7 @@
           = "years ago"
       .summary
         = @the_event.get('summary')
-    %a.action.btn.btn-success.pull-right{:href => "#modal-#{@the_event.id}", 'data-toggle' =>"modal"}
+    %a.action.btn.btn-success{:href => "#modal-#{@the_event.id}", 'data-toggle' =>"modal"}
       %i.icon-plus.icon-white
       Read More
 

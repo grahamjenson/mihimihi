@@ -1,5 +1,6 @@
 @import "compass"
 @import "compass/css3"
+@import "compass/css3/transition"
 @import "compass/utilities/lists"
 @import "compass/css3/box-shadow"
 
@@ -7,13 +8,13 @@
 $MAJOR_TICK_WIDTH: 50px
 $TIMELINE_WIDTH: 10px
 $TIMELINE_COLOR: #0b479d
-$TIMELINE_X : 250px
+$TIMELINE_X : 550px
 
 @mixin event-background
   @include background-image(image-url("/assets/o.jpg"))
   @include box-shadow(rgba(black, 0.4) 5px 5px 40px, rgba(black, 0.5) 0 0 100px inset)
-  @include border-radius(56px)
-  padding: 10px
+  @include border-radius(10px)
+  padding: 2px
 
 body
   height: 100%
@@ -21,14 +22,48 @@ body
   @include background-image(linear-gradient(left, rgba(255,255,255,0) 0%, rgba(0,0,0,.3) 80%),image-url("/assets/woven.png"))
   overflow-x: hidden
 
-.backpics
-  position: absolute
-  width: 100%
-  .backimg
-    width: 308px
+#backgroundpics
+
+  ul.backpics
     position: absolute
-    right: 100px
-    z-index: 5
+    width: 100%
+    list-style: none
+    li
+      width: 308px
+      position: absolute
+      left: 50px
+      z-index: 5
+      @include rotate(-5deg)
+      @include border-radius(10)
+      @include box-shadow(rgba(black, .5) 5px 5px 25px)
+      border-width: 2px
+      border-color: rgb(100,100,100)
+      img
+        width: 100%
+        max-height: 308px
+
+      a
+        font-size: 1.2em
+        color: rgba(black,1)
+        text-align: center
+        &:hover
+          background-color: rgba(0,0,0,0)
+          text-decoration: none
+
+    li:nth-child(even)
+      @include rotate(5deg)
+    
+    li:nth-child(3n)
+      @include rotate(1deg)
+      right: 125px
+    
+    li:nth-child(5n)
+      @include rotate(8deg)
+
+    li:hover
+      z-index: 50
+      @include transition(all .3s)
+      @include transform(scale(1.25))
 
 .current-time
   position: fixed
@@ -36,7 +71,7 @@ body
   color: grey
   opacity: .3
   top: 50%
-  right: 25%
+  right: 15%
   font-family: "Amatic SC", cursive
 
 .static
@@ -137,12 +172,12 @@ $WEAVE_HEIGHT: 150
     position: absolute
     width: $TIMELINE_WIDTH
     background: $TIMELINE_COLOR
-    left: 250px+($MAJOR_TICK_WIDTH/2) -($TIMELINE_WIDTH/2)
+    left: $TIMELINE_X+($MAJOR_TICK_WIDTH/2) -($TIMELINE_WIDTH/2)
 
 
 
 // EVENTs
-$EVENT_WIDTH : 950px
+$EVENT_WIDTH : 788px
 $EVENT_LEFT: $TIMELINE_X + 56px
 
   
@@ -182,7 +217,6 @@ $ICON_X: 36px
 
   /* background: url('/assets/weave.jpg') */
   .small
-    @include border-top-left-radius(56px)
     width: $EVENT_WIDTH
     height: 50
     margin-left: 18px
@@ -193,7 +227,6 @@ $ICON_X: 36px
         font-family: "Amatic SC", cursive
         font-size: 4.5em
         font-weight: 600
-        margin-left: 5px
         +text-shadow(rgba(black, .3) 2px 2px 0)
       .dates
         font-size: 1.5em
@@ -206,11 +239,17 @@ $ICON_X: 36px
         margin-left: 10px
 
     .map
-    
+      position: relative
+      left: -16px
+      margin: -4px
+      top: 2px
+
     .action
+      color: white
       position: absolute
-      top: 40%
-      right: 6px
+      bottom: 0px
+      right: 0px
+      z-index: 120
 
 
 .modal.fade.in
@@ -219,27 +258,34 @@ $ICON_X: 36px
   width: 800px
   left: 42%
   
+  .modal-header
+    h3
+      font-family: "Amatic SC", cursive
+      font-size: 4em
+
   .modal-body
     max-height: 500px
     min-height: 500px
     .content
       position: relative
       z-index: 10
+
   .map
     position: absolute
     left: 0
     opacity: .4
     z-index: 2
+
 .footers
 
   position: relative
   
-  left: $EVENT_LEFT
+  left: 25%
   top: 125px
 
   .mihimihi
     @include event-background
-    width: $EVENT_WIDTH
+    width: 950px
     h1
       text-align: center
       +text-shadow(rgba(black, .3) 2px 2px 0, rgba(black, .3) 6px 6px 0, rgba(black, .3) 4px 4px 0)
@@ -316,7 +362,7 @@ $ICON_X: 36px
 
   
   .end-matter
-    width: $EVENT_WIDTH
+    width: 950px
     .references
     .about
       .text
