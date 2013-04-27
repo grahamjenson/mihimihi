@@ -20,12 +20,13 @@
       Read More
 
 .event-modal.modal.hide.fade{id: "modal-#{@the_event.id}", 'tabindex' => "-1", 'role' => "dialog", 'aria-labelledby' => "myModalLabel", 'aria-hidden' => "true"}
+  .js-big-map.map{"data-id": @the_event.id}
   .modal-header
     %button.close{'data-dismiss' => "modal", 'aria-hidden' => "true", 'type' => 'button'}
       ×
     %h3
       = @the_event.get('title')
-  .js-big-map.map{"data-id": @the_event.id}
+  
   .modal-body
     .content
   .modal-footer

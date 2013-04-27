@@ -54,6 +54,7 @@ class Mihimihi.Views.EventInfoView extends Backbone.View
         dropTime: @dropTime,
         height: 480
         width: 780
+        scale: 150
       }
     })
 

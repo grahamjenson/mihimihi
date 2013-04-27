@@ -67,11 +67,11 @@ body
 
 .current-time
   position: fixed
-  font-size: 16em
+  font-size: 10em
   color: grey
   opacity: .3
   top: 50%
-  right: 15%
+  left: 50px+$TIMELINE_X
   font-family: "Amatic SC", cursive
 
 .static
@@ -177,7 +177,7 @@ $WEAVE_HEIGHT: 150
 
 
 // EVENTs
-$EVENT_WIDTH : 788px
+$EVENT_WIDTH : 670px
 $EVENT_LEFT: $TIMELINE_X + 56px
 
   
@@ -225,12 +225,12 @@ $ICON_X: 36px
 
       h2
         font-family: "Amatic SC", cursive
-        font-size: 4.5em
+        font-size: 3.5em
         font-weight: 600
         +text-shadow(rgba(black, .3) 2px 2px 0)
       .dates
-        font-size: 1.5em
-        margin-left: 20px
+        font-size: 1.2em
+        margin-left: 10px
         margin-top: 5px
       
       .summary
@@ -255,17 +255,20 @@ $ICON_X: 36px
 .modal.fade.in
 
 .event-modal
-  width: 800px
+  width: 780px
   left: 42%
   
   .modal-header
+    position: relative
+    z-index: 5
+    border-bottom: 0px
     h3
       font-family: "Amatic SC", cursive
       font-size: 4em
 
   .modal-body
-    max-height: 500px
-    min-height: 500px
+    max-height: 400px
+    min-height: 400px
     .content
       position: relative
       z-index: 10
@@ -275,6 +278,7 @@ $ICON_X: 36px
     left: 0
     opacity: .4
     z-index: 2
+    top: 0px
 
 .footers
 
