@@ -18,7 +18,7 @@
     %a.action.btn.btn-success{:href => "#modal-#{@the_event.id}", 'data-toggle' =>"modal"}
       %i.icon-plus.icon-white
       Read More
-
+  .bot
 .event-modal.modal.hide.fade{id: "modal-#{@the_event.id}", 'tabindex' => "-1", 'role' => "dialog", 'aria-labelledby' => "myModalLabel", 'aria-hidden' => "true"}
   .js-big-map.map{"data-id": @the_event.id}
   .modal-header
