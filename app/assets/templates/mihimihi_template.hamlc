@@ -43,7 +43,7 @@
       my ancestors that were left on the Arabian Peninsula moved north into Europe. 
       .years
         10,000 years ago,
-      as the last ice age recceded, they moved from Europe onto the British Isles.
+      as the last ice age receded, they moved from Europe onto the British Isles.
       %br
       .years
         30,000 years ago,
@@ -142,21 +142,110 @@
       .tranlate
         Therefore, welcome, welcome, welcome to you all.
 
+
+
   .end-matter
     .references
       %h2
         References
       %ul
-        %li DigitalNZ
-        %li Wikipeida
-        %li Family
+        %li
+          Family
+        %li
+          National Library
+          %ul
+            %li 
+              %a{href: 'http://natlib.govt.nz/records/22811829'} Lake Taupo
+        %li
+          Papers Past
+          %ul
+            %li 
+              %a{href: 'http://paperspast.natlib.govt.nz/cgi-bin/paperspast?a=d&cl=search&d=DOM19190402.2.2.2&srpos=3&e=-------10--1----0warren+gisborne--'} John Warren Obituary
+        %li
+          Viscortia University
+          %ul
+            %li 
+              %a{href: 'http://nzetc.victoria.ac.nz/tm/scholarly/tei-Cyc02Cycl-t1-body1-d3-d6-d6.html#t1-body1-d3-d6-d6-d7-d7'} John Warren
+            %li 
+              %a{href: 'http://nzetc.victoria.ac.nz/tm/scholarly/DarJour-fig-DarJo316.html'} Australian natives as drawn by Charles Darwinx
+        %li 
+          DigitalNZ
+          %ul
+            %li 
+              %a{href: 'http://digitalnz.org/records/1841561'} Island boat image
+            %li 
+              %a{href: 'http://digitalnz.org/records/1852236'} Painting
+            %li 
+              %a{href: 'http://digitalnz.org/records/29955021'} The British Map
+            %li
+              %a{href: 'http://www.digitalnz.org/records/1843839'} Jean-Pierre Norblin - Man Walking with a Stick (1779)
+            %li
+              %a{href: 'http://digitalnz.org/records/1844823'} Maori tatoo drawing from 1833
+            %li
+              %a{href: 'http://api.digitalnz.org/records/19475827/source'} Indus Valley Civilisation article
+            %li
+              %a{href: 'http://www.digitalnz.org/records/30071674'} Te Waka Tarakau of Ngati Kahungunu (1836)
+            %li
+              %a{href: 'http://digitalnz.org/records/1851131'} James Cook's arrival to New Zealand
+            %li
+              %a{href: 'http://www.digitalnz.org/records/10385875'} Article about John Warren's sons drowning
+        %li 
+          Wikipeida
+          %ul
+
+            %li
+              %a{href: 'http://en.wikipedia.org/wiki/King_Arthur'} Legendary King Arthur
+            %li
+              %a{href: 'http://en.wikipedia.org/wiki/Great_Pyramid_of_Giza'} Great Pyramids of Giza
+            %li
+              %a{href: 'http://en.wikipedia.org/wiki/Neanderthal'} Neanderthal
+            %li
+              %a{href: 'http://en.wikipedia.org/wiki/Qafzeh'} Qafzeh-Skhul
+            %li
+              %a{href: 'http://en.wikipedia.org/wiki/Clovis_culture'} Early American pointed projectile 
+            %li
+              %a{href: 'http://en.wikipedia.org/wiki/Cherokee'} Three Cherokee men
+            %li
+              %a{href: 'http://en.wikipedia.org/wiki/Rimutaka_Tunnel'} Rimutaka Tunnel
+            %li
+              %a{href: 'http://en.wikipedia.org/wiki/Magdalenian'} Magdalenian culture
+            %li
+              %a{href: 'http://en.wikipedia.org/wiki/Gravettian_culture'} Gravettian culture
+            %li
+              %a{href: 'http://en.wikipedia.org/wiki/Stonehenge'} Stonehenge 
+            %li
+              %a{href: 'http://en.wikipedia.org/wiki/Treaty_of_Waitangi'} Hone Heke 
+            %li
+              %a{href: 'http://en.wikipedia.org/wiki/Penn%27s_Treaty_with_the_Indians'} Penn Treaty
+            %li
+              %a{href: 'http://en.wikipedia.org/wiki/Early_human_migrations'} Red sea crossing (author Muntuwandi)
+            %li
+              %a{href: 'http://en.wikipedia.org/wiki/Roman_conquest_of_Britain'} Roman conquest of Britain
+            %li
+              %a{href: 'http://en.wikipedia.org/wiki/American_mastodon'} Mastodons
+            %li
+              %a{href: 'http://en.wikipedia.org/wiki/Paleo-Indian'} Paleoamericans
+            %li
+              %a{href: 'http://en.wikipedia.org/wiki/Skara_Brae'} Skara Brae village
+            %li
+              %a{href: 'http://en.wikipedia.org/wiki/Machu_Picchu'} Machu Picchu
+            %li
+              %a{href: 'http://en.wikipedia.org/wiki/William_Shakespeare'} William Shakespeare (1564 - 1616)
+            %li
+              %a{href: 'http://en.wikipedia.org/wiki/The_Generall_Historie_of_Virginia,_New-England,_and_the_Summer_Isles'} From a book by John Smith (1580-1631)
+            %li
+              %a{href: 'http://en.wikipedia.org/wiki/Jebel_Irhoud'} Jebel Irhoud skull 160,000 years old
+            %li
+              %a{href: 'http://en.wikipedia.org/wiki/Aurignacian'} The Aurignacian culture
+            %li
+              %a{href: 'http://en.wikipedia.org/wiki/Toba_catastrophe_theory'} Toba crater
     .about
       %h2
         About
       .img
         %img{src: '/assets/me.jpg'}
       .text
-        More recently I (Graham Jenson) have been working as a software developer in Wellington.
+        More recently, I (Graham Jenson) have been working as a software developer in Wellington.
         I have just finshed my Ph.D. at Massey University Palmerston North in Computer Science and Software Engineering.
         I am getting married in November.
         I researched, developed and designed this site. 

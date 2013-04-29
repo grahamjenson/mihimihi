@@ -302,6 +302,6 @@ DEPENDENCIES
   rails (= 3.2.8)
   rmagick
   rspec-rails
-  sass-rails
+  sass-rails (= 3.2.6)
   thin
   uglifier (>= 1.0.3)

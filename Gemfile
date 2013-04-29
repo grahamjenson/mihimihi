@@ -13,7 +13,7 @@ gem 'bootstrap-sass', '~> 2.3.1.0'
 gem 'backbone-on-rails'
 gem 'haml_coffee_assets'
 
-gem 'sass-rails'
+gem 'sass-rails', '3.2.6'
 gem "compass"
 gem "compass-rails"
 
