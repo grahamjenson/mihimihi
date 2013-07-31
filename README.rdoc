@@ -1,261 +1,76 @@
-== Welcome to Rails
+== Mihimihi
 
-Rails is a web-application framework that includes everything needed to create
-database-backed web applications according to the Model-View-Control pattern.
+This is my mihimihi app (located at [http://mihimihi.maori.geek.nz/](http://mihimihi.maori.geek.nz/)). 
+It is written in Ruby on Rails, though it is mostly Sass and CoffeScript, Backbone.js and d3.js.
 
-This pattern splits the view (also called the presentation) into "dumb"
-templates that are primarily responsible for inserting pre-built data in between
-HTML tags. The model contains the "smart" domain objects (such as Account,
-Product, Person, Post) that holds all the business logic and knows how to
-persist themselves to a database. The controller handles the incoming requests
-(such as Save New Account, Update Product, Show Post) by manipulating the model
-and directing data to the view.
-
-In Rails, the model is handled by what's called an object-relational mapping
-layer entitled Active Record. This layer allows you to present the data from
-database rows as objects and embellish these data objects with business logic
-methods. You can read more about Active Record in
-link:files/vendor/rails/activerecord/README.html.
-
-The controller and view are handled by the Action Pack, which handles both
-layers by its two parts: Action View and Action Controller. These two layers
-are bundled in a single package due to their heavy interdependence. This is
-unlike the relationship between the Active Record and Action Pack that is much
-more separate. Each of these packages can be used independently outside of
-Rails. You can read more about Action Pack in
-link:files/vendor/rails/actionpack/README.html.
+To host the images I am using an Amazon S3 bucket.
 
 
-== Getting Started
+== Mix'n'Mash writeup
 
-1. At the command prompt, create a new Rails application:
-       <tt>rails new myapp</tt> (where <tt>myapp</tt> is the application name)
+Description
 
-2. Change directory to <tt>myapp</tt> and start the web server:
-       <tt>cd myapp; rails server</tt> (run with --help for options)
+A digital Mihimihi back to the birth of man! Have a play and explore history, family, and the location of the self in an electronic age. We couldn't miss this outstanding story, it scooped up a $150 prize.
 
-3. Go to http://localhost:3000/ and you'll see:
-       "Welcome aboard: You're riding Ruby on Rails!"
+Graham said
 
-4. Follow the guidelines to start developing your application. You can find
-the following resources handy:
+I have recently become interested in my family’s history. I want to know where I am from, who are my ancestors, and what events led me to be here? I have used this Mix & Mash competition as an excuse to answer these questions and research my families history, and I present it as a visual story. I have titled my entry Mihimihi. A mihimihi is a Maori speech where a person gives their whakapapa (genealogy) by describing their iwi (tribe), their hapu (local tribe), their whanau (family) and finishes with an introduction to themselves. The purpose of the mihimihi is to establish links to the people that hear it, as if you go back far enough and include enough people, everyone is linked. My submission is my mihimihi. To establish a link to anyone who reads it, I have started my mihimihi when modern humans first evolved in Africa 200,000 years ago. From there I describe the journeys and some of the challenges my ancestors would have gone through getting from Africa to New Zealand. I introduce my family (as far back as I have found), and finally I introduce myself.. I present this as a description of where I came from, in an attempt to understand who I am. This is the story of my ancestors, my family, and therefore the story of me.
 
-* The Getting Started Guide: http://guides.rubyonrails.org/getting_started.html
-* Ruby on Rails Tutorial Book: http://www.railstutorial.org/
+Selected judges comments
 
+"It's powerfully grounding and develops a strong connection between the audience and author. I feel like I know your whole family!"
 
-== Debugging Rails
+"This is a huge, well-thought-through, enjoyable project that knits together time and space, encyclopedia and photo album, history and story, to make us rethink the idea of tikanga, the etiquette of introductions, and the location of the self in an electronic age."
 
-Sometimes your application goes wrong. Fortunately there are a lot of tools that
-will help you debug it and get it back on the rails.
+"Invoking your ancestors is one thing, but going all the way back to the dawn of humanity? Next level!"
 
-First area to check is the application log files. Have "tail -f" commands
-running on the server.log and development.log. Rails will automatically display
-debugging and runtime information to these files. Debugging info will also be
-shown in the browser on requests from 127.0.0.1.
+Sources
 
-You can also log your own messages directly into the log file from your code
-using the Ruby logger class from inside your controllers. Example:
+Wikipeidia sources are either Public domain or share with attribution.
+Digital NZ and other New Zealand sources all allow sharing.
 
-  class WeblogController < ActionController::Base
-    def destroy
-      @weblog = Weblog.find(params[:id])
-      @weblog.destroy
-      logger.info("#{Time.now} Destroyed Weblog ID ##{@weblog.id}!")
-    end
-  end
+National Library
+http://natlib.govt.nz/records/22811829 : Lake Taupo
 
-The result will be a message in your log file along the lines of:
+Papers Past
+http://paperspast.natlib.govt.nz/cgi-bin/paperspast?a=d&cl=search&d=DOM19190402.2.2.2&srpos=3&e=-------10--1----0warren+gisborne-- : John Warren Obituary
 
-  Mon Oct 08 14:22:29 +1000 2007 Destroyed Weblog ID #1!
+Viscortia University
+http://nzetc.victoria.ac.nz/tm/scholarly/tei-Cyc02Cycl-t1-body1-d3-d6-d6.html#t1-body1-d3-d6-d6-d7-d7 : John Warren
+http://nzetc.victoria.ac.nz/tm/scholarly/DarJour-fig-DarJo316.html : Australian natives as drawn by Charles Darwinx
 
-More information on how to use the logger is at http://www.ruby-doc.org/core/
+DigitalNZ
+http://digitalnz.org/records/1841561 : Island boat image
+http://digitalnz.org/records/1852236 : Painting
+'http://digitalnz.org/records/29955021 : The British Map
+http://www.digitalnz.org/records/1843839 : Jean-Pierre Norblin - Man Walking with a Stick (1779)
+http://digitalnz.org/records/1844823 : Maori tatoo drawing from 1833
+http://api.digitalnz.org/records/19475827/source : Indus Valley Civilisation article
+http://www.digitalnz.org/records/30071674 : Te Waka Tarakau of Ngati Kahungunu (1836)
+http://digitalnz.org/records/1851131 : James Cook's arrival to New Zealand
+http://www.digitalnz.org/records/10385875 : Article about John Warren's sons drowning
 
-Also, Ruby documentation can be found at http://www.ruby-lang.org/. There are
-several books available online as well:
-
-* Programming Ruby: http://www.ruby-doc.org/docs/ProgrammingRuby/ (Pickaxe)
-* Learn to Program: http://pine.fm/LearnToProgram/ (a beginners guide)
-
-These two books will bring you up to speed on the Ruby language and also on
-programming in general.
-
-
-== Debugger
-
-Debugger support is available through the debugger command when you start your
-Mongrel or WEBrick server with --debugger. This means that you can break out of
-execution at any point in the code, investigate and change the model, and then,
-resume execution! You need to install ruby-debug to run the server in debugging
-mode. With gems, use <tt>sudo gem install ruby-debug</tt>. Example:
-
-  class WeblogController < ActionController::Base
-    def index
-      @posts = Post.all
-      debugger
-    end
-  end
-
-So the controller will accept the action, run the first line, then present you
-with a IRB prompt in the server window. Here you can do things like:
-
-  >> @posts.inspect
-  => "[#<Post:0x14a6be8
-          @attributes={"title"=>nil, "body"=>nil, "id"=>"1"}>,
-       #<Post:0x14a6620
-          @attributes={"title"=>"Rails", "body"=>"Only ten..", "id"=>"2"}>]"
-  >> @posts.first.title = "hello from a debugger"
-  => "hello from a debugger"
-
-...and even better, you can examine how your runtime objects actually work:
-
-  >> f = @posts.first
-  => #<Post:0x13630c4 @attributes={"title"=>nil, "body"=>nil, "id"=>"1"}>
-  >> f.
-  Display all 152 possibilities? (y or n)
-
-Finally, when you're ready to resume execution, you can enter "cont".
-
-
-== Console
-
-The console is a Ruby shell, which allows you to interact with your
-application's domain model. Here you'll have all parts of the application
-configured, just like it is when the application is running. You can inspect
-domain models, change values, and save to the database. Starting the script
-without arguments will launch it in the development environment.
-
-To start the console, run <tt>rails console</tt> from the application
-directory.
-
-Options:
-
-* Passing the <tt>-s, --sandbox</tt> argument will rollback any modifications
-  made to the database.
-* Passing an environment name as an argument will load the corresponding
-  environment. Example: <tt>rails console production</tt>.
-
-To reload your controllers and models after launching the console run
-<tt>reload!</tt>
-
-More information about irb can be found at:
-link:http://www.rubycentral.org/pickaxe/irb.html
-
-
-== dbconsole
-
-You can go to the command line of your database directly through <tt>rails
-dbconsole</tt>. You would be connected to the database with the credentials
-defined in database.yml. Starting the script without arguments will connect you
-to the development database. Passing an argument will connect you to a different
-database, like <tt>rails dbconsole production</tt>. Currently works for MySQL,
-PostgreSQL and SQLite 3.
-
-== Description of Contents
-
-The default directory structure of a generated Ruby on Rails application:
-
-  |-- app
-  |   |-- assets
-  |       |-- images
-  |       |-- javascripts
-  |       `-- stylesheets
-  |   |-- controllers
-  |   |-- helpers
-  |   |-- mailers
-  |   |-- models
-  |   `-- views
-  |       `-- layouts
-  |-- config
-  |   |-- environments
-  |   |-- initializers
-  |   `-- locales
-  |-- db
-  |-- doc
-  |-- lib
-  |   `-- tasks
-  |-- log
-  |-- public
-  |-- script
-  |-- test
-  |   |-- fixtures
-  |   |-- functional
-  |   |-- integration
-  |   |-- performance
-  |   `-- unit
-  |-- tmp
-  |   |-- cache
-  |   |-- pids
-  |   |-- sessions
-  |   `-- sockets
-  `-- vendor
-      |-- assets
-          `-- stylesheets
-      `-- plugins
-
-app
-  Holds all the code that's specific to this particular application.
-
-app/assets
-  Contains subdirectories for images, stylesheets, and JavaScript files.
-
-app/controllers
-  Holds controllers that should be named like weblogs_controller.rb for
-  automated URL mapping. All controllers should descend from
-  ApplicationController which itself descends from ActionController::Base.
-
-app/models
-  Holds models that should be named like post.rb. Models descend from
-  ActiveRecord::Base by default.
-
-app/views
-  Holds the template files for the view that should be named like
-  weblogs/index.html.erb for the WeblogsController#index action. All views use
-  eRuby syntax by default.
-
-app/views/layouts
-  Holds the template files for layouts to be used with views. This models the
-  common header/footer method of wrapping views. In your views, define a layout
-  using the <tt>layout :default</tt> and create a file named default.html.erb.
-  Inside default.html.erb, call <% yield %> to render the view using this
-  layout.
-
-app/helpers
-  Holds view helpers that should be named like weblogs_helper.rb. These are
-  generated for you automatically when using generators for controllers.
-  Helpers can be used to wrap functionality for your views into methods.
-
-config
-  Configuration files for the Rails environment, the routing map, the database,
-  and other dependencies.
-
-db
-  Contains the database schema in schema.rb. db/migrate contains all the
-  sequence of Migrations for your schema.
-
-doc
-  This directory is where your application documentation will be stored when
-  generated using <tt>rake doc:app</tt>
-
-lib
-  Application specific libraries. Basically, any kind of custom code that
-  doesn't belong under controllers, models, or helpers. This directory is in
-  the load path.
-
-public
-  The directory available for the web server. Also contains the dispatchers and the
-  default HTML files. This should be set as the DOCUMENT_ROOT of your web
-  server.
-
-script
-  Helper scripts for automation and generation.
-
-test
-  Unit and functional tests along with fixtures. When using the rails generate
-  command, template test files will be generated for you and placed in this
-  directory.
-
-vendor
-  External libraries that the application depends on. Also includes the plugins
-  subdirectory. If the app has frozen rails, those gems also go here, under
-  vendor/rails/. This directory is in the load path.
+Wikipeida
+http://en.wikipedia.org/wiki/King_Arthur : Legendary King Arthur
+http://en.wikipedia.org/wiki/Great_Pyramid_of_Giza : Great Pyramids of Giza
+http://en.wikipedia.org/wiki/Neanderthal : Neanderthal
+http://en.wikipedia.org/wiki/Qafzeh : Qafzeh-Skhul
+http://en.wikipedia.org/wiki/Clovis_culture : Early American pointed projectile
+http://en.wikipedia.org/wiki/Cherokee : Three Cherokee men
+http://en.wikipedia.org/wiki/Rimutaka_Tunnel : Rimutaka Tunnel
+http://en.wikipedia.org/wiki/Magdalenian : Magdalenian culture
+http://en.wikipedia.org/wiki/Gravettian_culture : Gravettian culture
+http://en.wikipedia.org/wiki/Stonehenge : Stonehenge
+http://en.wikipedia.org/wiki/Treaty_of_Waitangi : Hone Heke
+http://en.wikipedia.org/wiki/Penn%27s_Treaty_with_the_Indians : Penn Treaty
+http://en.wikipedia.org/wiki/Early_human_migrations : Red sea crossing (author Muntuwandi)
+http://en.wikipedia.org/wiki/Roman_conquest_of_Britain : Roman conquest of Britain
+http://en.wikipedia.org/wiki/American_mastodon : Mastodons
+http://en.wikipedia.org/wiki/Paleo-Indian : Paleoamericans
+http://en.wikipedia.org/wiki/Skara_Brae : Skara Brae village
+http://en.wikipedia.org/wiki/Machu_Picchu : Machu Picchu
+http://en.wikipedia.org/wiki/William_Shakespeare : William Shakespeare (1564 - 1616)
+http://en.wikipedia.org/wiki/The_Generall_Historie_of_Virginia,_New-England,_and_the_Summer_Isles : From a book by John Smith (1580-1631)
+http://en.wikipedia.org/wiki/Jebel_Irhoud : Jebel Irhoud skull 160,000 years old
+http://en.wikipedia.org/wiki/Aurignacian : The Aurignacian culture
+http://en.wikipedia.org/wiki/Toba_catastrophe_theory : Toba crater
