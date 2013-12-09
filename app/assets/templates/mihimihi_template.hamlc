@@ -162,7 +162,7 @@
             %li 
               %a{href: 'http://paperspast.natlib.govt.nz/cgi-bin/paperspast?a=d&cl=search&d=DOM19190402.2.2.2&srpos=3&e=-------10--1----0warren+gisborne--'} John Warren Obituary
         %li
-          Viscortia University
+          Victoria University
           %ul
             %li 
               %a{href: 'http://nzetc.victoria.ac.nz/tm/scholarly/tei-Cyc02Cycl-t1-body1-d3-d6-d6.html#t1-body1-d3-d6-d6-d7-d7'} John Warren
